@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mi selección | Mandi Eventos</title>
+
+  <meta
+    name="description"
+    content="Revisa tu selección de juegos y solicita una cotización a Mandi Eventos."
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+
+      <a href="index.html" class="logo">
+        MANDI
+        <span>EVENTOS</span>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#juegos">Juegos</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="galeria.html">Galería</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+
+        <a href="carrito.html" class="carrito">
+          🛒 Carrito <span id="contador-carrito">0</span>
+        </a>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+
+      <p class="etiqueta-mandi">
+        MANDI EVENTOS
+      </p>
+
+      <h1>
+        Tu <span>selección</span>
+      </h1>
+
+      <p>
+        Revisa los juegos que seleccionaste para tu evento.
+      </p>
+
+    </section>
+
+
+    <section class="carrito-contenedor">
+
+      <div id="carrito-vacio" class="carrito-vacio">
+
+        <div class="carrito-vacio-icono">🛒</div>
+
+        <h2>Tu carrito está vacío</h2>
+
+        <p>
+          Explora nuestros juegos y agrega los que más te gusten.
+        </p>
+
+        <a href="index.html#juegos" class="btn-principal">
+          Ver juegos
+        </a>
+
+      </div>
+
+
+      <div id="carrito-contenido" style="display:none;">
+
+        <div id="lista-carrito"></div>
+
+
+        <div class="resumen-carrito">
+
+          <div>
+
+            <span>Productos seleccionados</span>
+
+            <strong id="total-productos">
+              0
+            </strong>
+
+          </div>
+
+
+          <div class="resumen-total">
+
+            <span>Total estimado</span>
+
+            <strong id="total-carrito">
+              $0
+            </strong>
+
+          </div>
+
+
+          <p class="nota-carrito">
+            El valor final puede variar según fecha,
+            ubicación, duración y características del evento.
+          </p>
+
+
+          <button
+            class="btn-cotizar"
+            onclick="solicitarCotizacion()"
+          >
+            💬 Solicitar cotización por WhatsApp
+          </button>
+
+
+          <button
+            class="btn-seguir"
+            onclick="window.location.href='index.html#juegos'"
+          >
+            ← Seguir viendo juegos
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- MENSAJE BONITO -->
+
+  <div id="toast" class="toast">
+
+    <div class="toast-icono">
+      ✓
+    </div>
+
+    <div class="toast-texto">
+
+      <strong id="toast-titulo">
+        ¡Listo!
+      </strong>
+
+      <span id="toast-mensaje">
+        Producto actualizado.
+      </span>
+
+    </div>
+
+    <button
+      class="toast-cerrar"
+      onclick="cerrarToast()"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <footer>
+
+    <div class="footer-contenido">
+
+      <div>
+
+        <h3>Mandi Eventos</h3>
+
+        <p>
+          Juegos, entretención y experiencias para
+          hacer de cada celebración un momento inolvidable.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Juegos</h3>
+
+        <p>
+          <a href="inflables.html">Inflables</a>
+        </p>
+
+        <p>
+          <a href="mecanicos.html">Mecánicos</a>
+        </p>
+
+        <p>
+          <a href="interactivos.html">Interactivos</a>
+        </p>
+
+        <p>
+          <a href="juegos-tipicos.html">Juegos Típicos</a>
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Contacto</h3>
+
+        <p>
+          <a href="contacto.html">
+            Contáctanos →
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-abajo">
+      © 2026 Mandi Eventos · Todos los derechos reservados
+    </div>
+
+  </footer>
+
+
+  <script src="carrito.js"></script>
+
+</body>
+</html>
