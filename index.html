@@ -4,350 +4,345 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mandi Eventos | Juegos para cumpleaños y eventos</title>
+  <title>Mandi Eventos | Juegos y entretención para eventos</title>
 
-  <meta name="description" content="Arriendo de juegos, inflables y entretenciones para cumpleaños, eventos familiares y empresas. Cotiza tu evento con Mandi Eventos.">
+  <meta name="description" content="Mandi Eventos: juegos inflables, mecánicos, interactivos, electrónicos, juegos típicos, juegos de salón, agua y fiestas de espuma.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #222;
-      background: #fff;
-    }
-
-    header {
-      background: #ffffff;
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
-
-    .logo {
-      font-size: 26px;
-      font-weight: 800;
-    }
-
-    .logo span {
-      color: #ff4f81;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      background: #25d366;
-      color: white;
-    }
-
-    .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      padding: 70px 7%;
-      background: linear-gradient(135deg, #fff1f7, #eef9ff);
-    }
-
-    .hero-content {
-      max-width: 720px;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      color: #ff4f81;
-    }
-
-    .hero p {
-      font-size: 21px;
-      line-height: 1.6;
-      margin-bottom: 32px;
-      color: #555;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .primary {
-      background: #ff4f81;
-      color: white;
-    }
-
-    .secondary {
-      background: #222;
-      color: white;
-    }
-
-    section {
-      padding: 75px 7%;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 42px;
-      margin-bottom: 12px;
-    }
-
-    .section-title p {
-      color: #666;
-      font-size: 18px;
-    }
-
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 22px;
-    }
-
-    .card {
-      padding: 30px;
-      border-radius: 22px;
-      background: #fff;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      transition: transform .2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card .icon {
-      font-size: 45px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      font-size: 23px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #666;
-      line-height: 1.5;
-    }
-
-    .cta {
-      background: #222;
-      color: white;
-      text-align: center;
-      border-radius: 30px;
-      margin: 40px 7%;
-      padding: 70px 30px;
-    }
-
-    .cta h2 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      font-size: 19px;
-      color: #ddd;
-      margin-bottom: 28px;
-    }
-
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 35px 20px;
-    }
-
-    footer p {
-      color: #bbb;
-      margin-top: 8px;
-    }
-
-    @media (max-width: 700px) {
-      header {
-        padding: 15px 5%;
-      }
-
-      .logo {
-        font-size: 21px;
-      }
-
-      header .btn {
-        padding: 11px 16px;
-        font-size: 14px;
-      }
-
-      .hero {
-        min-height: 600px;
-        padding: 60px 6%;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      section {
-        padding: 55px 6%;
-      }
-
-      .section-title h2,
-      .cta h2 {
-        font-size: 32px;
-      }
-
-      .cta {
-        margin: 20px 5%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">Mandi <span>Eventos</span></div>
+  <!-- =========================
+       ENCABEZADO
+  ========================== -->
 
-    <a class="btn" href="https://wa.me/569XXXXXXXX">
-      Cotiza por WhatsApp
-    </a>
+  <header>
+    <nav class="navbar">
+
+      <a href="index.html" class="logo">
+        MANDI
+        <span>EVENTOS</span>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="#juegos">Juegos</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="galeria.html">Galería</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+
+        <a href="#" class="carrito">
+          🛒 Carrito
+        </a>
+      </div>
+
+    </nav>
   </header>
+
+
+  <!-- =========================
+       PORTADA
+  ========================== -->
 
   <main>
 
     <section class="hero">
-      <div class="hero-content">
 
-        <h1>
-          ¡Haz que tu evento sea <span>inolvidable!</span>
-        </h1>
-
-        <p>
-          Juegos, entretenciones e increíbles experiencias para
-          cumpleaños, celebraciones familiares, colegios y eventos
-          de empresas.
-        </p>
-
-        <div class="hero-buttons">
-          <a class="btn primary" href="https://wa.me/569XXXXXXXX">
-            Quiero cotizar mi evento
-          </a>
-
-          <a class="btn secondary" href="#juegos">
-            Ver juegos
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-
-    <section id="juegos">
-
-      <div class="section-title">
-        <h2>Tenemos diversión para todos</h2>
-        <p>Elige las entretenciones ideales para tu evento.</p>
-      </div>
-
-      <div class="categories">
-
-        <div class="card">
-          <div class="icon">🎈</div>
-          <h3>Juegos Inflables</h3>
-          <p>
-            Inflables para cumpleaños y celebraciones infantiles.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🤠</div>
-          <h3>Toro Mecánico</h3>
-          <p>
-            Una de nuestras atracciones favoritas para grandes y chicos.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🎮</div>
-          <h3>Juegos Interactivos</h3>
-          <p>
-            Experiencias modernas para disfrutar y competir.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🫧</div>
-          <h3>Fiesta de Espuma</h3>
-          <p>
-            Una experiencia diferente para transformar tu celebración.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">💦</div>
-          <h3>Juegos de Agua</h3>
-          <p>
-            Perfectos para celebraciones durante los días de calor.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🎪</div>
-          <h3>Eventos de Empresa</h3>
-          <p>
-            Entretenimiento para empresas, colegios y grandes eventos.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <div class="cta">
-
-      <h2>¿Estás organizando un evento?</h2>
-
-      <p>
-        Cuéntanos qué estás preparando y te ayudamos a encontrar
-        las mejores entretenciones.
+      <p style="color:#c79a3b; font-weight:bold; letter-spacing:3px;">
+        MANDI EVENTOS
       </p>
 
-      <a class="btn" href="https://wa.me/569XXXXXXXX">
-        Hablar con Mandi Eventos
-      </a>
+      <h1>
+        Hagamos de tu evento<br>
+        algo <span>inolvidable</span>
+      </h1>
 
-    </div>
+      <p>
+        Juegos, entretención y experiencias para cumpleaños,
+        colegios, empresas y todo tipo de celebraciones.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         CATEGORÍAS
+    ========================== -->
+
+    <section class="categorias" id="juegos">
+
+      <div class="titulo-seccion">
+
+        <h2>Encuentra la diversión que buscas</h2>
+
+        <p>
+          Explora nuestras categorías y descubre todos nuestros juegos.
+        </p>
+
+      </div>
+
+
+      <div class="categorias-grid">
+
+
+        <!-- INFLABLES -->
+
+        <a href="inflables.html" class="categoria">
+
+          <div class="categoria-icono">🎈</div>
+
+          <h3>Inflables</h3>
+
+          <p>
+            Castillos, toboganes, obstáculos y mucho más.
+          </p>
+
+        </a>
+
+
+        <!-- MECÁNICOS -->
+
+        <a href="mecanicos.html" class="categoria">
+
+          <div class="categoria-icono">🤠</div>
+
+          <h3>Mecánicos</h3>
+
+          <p>
+            Toro mecánico, reloj derribador y desafíos.
+          </p>
+
+        </a>
+
+
+        <!-- INTERACTIVOS -->
+
+        <a href="interactivos.html" class="categoria">
+
+          <div class="categoria-icono">🎯</div>
+
+          <h3>Interactivos</h3>
+
+          <p>
+            Juegos de habilidad, competencia y entretención.
+          </p>
+
+        </a>
+
+
+        <!-- ZONA INFANTIL -->
+
+        <a href="zona-infantil.html" class="categoria">
+
+          <div class="categoria-icono">🧸</div>
+
+          <h3>Zona Infantil</h3>
+
+          <p>
+            Opciones pensadas especialmente para los más pequeños.
+          </p>
+
+        </a>
+
+
+        <!-- ELECTRÓNICOS -->
+
+        <a href="electronicos.html" class="categoria">
+
+          <div class="categoria-icono">🕹️</div>
+
+          <h3>Electrónicos</h3>
+
+          <p>
+            Juegos electrónicos para grandes y chicos.
+          </p>
+
+        </a>
+
+
+        <!-- JUEGOS DE SALÓN -->
+
+        <a href="juegos-de-salon.html" class="categoria">
+
+          <div class="categoria-icono">🎮</div>
+
+          <h3>Juegos de Salón</h3>
+
+          <p>
+            Pool, taca taca, ping pong, arcade y más.
+          </p>
+
+        </a>
+
+
+        <!-- JUEGOS TÍPICOS -->
+
+        <a href="juegos-tipicos.html" class="categoria">
+
+          <div class="categoria-icono">🇨🇱</div>
+
+          <h3>Juegos Típicos</h3>
+
+          <p>
+            Tradición chilena para celebraciones y Fiestas Patrias.
+          </p>
+
+        </a>
+
+
+        <!-- JUEGOS DE AGUA -->
+
+        <a href="juegos-de-agua.html" class="categoria">
+
+          <div class="categoria-icono">💦</div>
+
+          <h3>Juegos de Agua</h3>
+
+          <p>
+            Diversión refrescante para disfrutar al máximo.
+          </p>
+
+        </a>
+
+
+        <!-- FIESTA DE ESPUMA -->
+
+        <a href="fiesta-de-espuma.html" class="categoria">
+
+          <div class="categoria-icono">🫧</div>
+
+          <h3>Fiesta de Espuma</h3>
+
+          <p>
+            Una experiencia diferente para hacer tu evento inolvidable.
+          </p>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         LLAMADO A COTIZAR
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="titulo-seccion">
+
+        <h2>¿No sabes qué juegos elegir?</h2>
+
+        <p>
+          Cuéntanos qué tipo de evento estás preparando
+          y te ayudamos a encontrar las mejores opciones.
+        </p>
+
+        <br>
+
+        <a
+          href="contacto.html"
+          class="carrito"
+          style="display:inline-block;"
+        >
+          ✨ Quiero cotizar mi evento
+        </a>
+
+      </div>
+
+    </section>
 
   </main>
 
 
+  <!-- =========================
+       WHATSAPP
+  ========================== -->
+
+  <a
+    href="https://wa.me/"
+    class="whatsapp"
+    aria-label="Contactar por WhatsApp"
+  >
+    💬
+  </a>
+
+
+  <!-- =========================
+       PIE DE PÁGINA
+  ========================== -->
+
   <footer>
 
-    <strong>Mandi Eventos</strong>
+    <div class="footer-contenido">
 
-    <p>
-      Juegos y entretenciones para tus mejores momentos.
-    </p>
+      <div>
+
+        <h3>Mandi Eventos</h3>
+
+        <p>
+          Juegos, entretención y experiencias
+          para hacer de cada celebración
+          un momento inolvidable.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Juegos</h3>
+
+        <p>
+          <a href="inflables.html">Inflables</a>
+        </p>
+
+        <p>
+          <a href="mecanicos.html">Mecánicos</a>
+        </p>
+
+        <p>
+          <a href="interactivos.html">Interactivos</a>
+        </p>
+
+        <p>
+          <a href="juegos-tipicos.html">Juegos Típicos</a>
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Contacto</h3>
+
+        <p>
+          ¿Quieres cotizar tu evento?
+        </p>
+
+        <p>
+          <a href="contacto.html">
+            Contáctanos →
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-abajo">
+
+      © 2026 Mandi Eventos · Todos los derechos reservados
+
+    </div>
 
   </footer>
+
 
 </body>
 </html>
