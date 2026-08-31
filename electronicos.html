@@ -1,1 +1,1265 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Juegos Electrónicos | Mandi Eventos</title>
+
+  <meta
+    name="description"
+    content="Juegos electrónicos con Free Pass para eventos, cumpleaños y celebraciones. Mandi Eventos."
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       ENCABEZADO
+  ========================== -->
+
+  <header>
+
+    <nav class="navbar">
+
+      <a href="index.html" class="logo">
+
+        MANDI
+
+        <span>EVENTOS</span>
+
+      </a>
+
+
+      <div class="menu">
+
+        <a href="index.html">Inicio</a>
+
+        <a href="index.html#juegos">Juegos</a>
+
+        <a href="eventos.html">Eventos</a>
+
+        <a href="galeria.html">Galería</a>
+
+        <a href="nosotros.html">Nosotros</a>
+
+        <a href="contacto.html">Contacto</a>
+
+
+        <a
+          href="carrito.html"
+          class="carrito"
+        >
+
+          🛒
+
+          <span>Carrito</span>
+
+          <span id="contador-carrito">
+            0
+          </span>
+
+        </a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+      <p
+        style="
+          color:#c79a3b;
+          font-weight:bold;
+          letter-spacing:3px;
+        "
+      >
+        MANDI EVENTOS
+      </p>
+
+
+      <h1>
+
+        Juegos
+
+        <span>
+          Electrónicos
+        </span>
+
+      </h1>
+
+
+      <p>
+
+        Diversión sin fichas, sin monedas
+        y con Free Pass incluido.
+
+      </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         CATÁLOGO
+    ========================== -->
+
+    <section class="catalogo">
+
+
+      <!-- CATEGORÍAS -->
+
+      <div
+        style="
+          display:flex;
+          justify-content:center;
+          gap:10px;
+          flex-wrap:wrap;
+          margin-bottom:45px;
+        "
+      >
+
+        <a
+          href="inflables.html"
+          style="
+            padding:12px 20px;
+            border:1px solid #ece8f0;
+            border-radius:30px;
+            background:white;
+            text-decoration:none;
+          "
+        >
+          Inflables
+        </a>
+
+
+        <a
+          href="mecanicos.html"
+          style="
+            padding:12px 20px;
+            border:1px solid #ece8f0;
+            border-radius:30px;
+            background:white;
+            text-decoration:none;
+          "
+        >
+          Mecánicos
+        </a>
+
+
+        <a
+          href="interactivos.html"
+          style="
+            padding:12px 20px;
+            border:1px solid #ece8f0;
+            border-radius:30px;
+            background:white;
+            text-decoration:none;
+          "
+        >
+          Interactivos
+        </a>
+
+
+        <a
+          href="electronicos.html"
+          class="carrito"
+          style="
+            padding:12px 20px;
+            text-decoration:none;
+          "
+        >
+          Electrónicos
+        </a>
+
+
+        <a
+          href="juegos-tipicos.html"
+          style="
+            padding:12px 20px;
+            border:1px solid #ece8f0;
+            border-radius:30px;
+            background:white;
+            text-decoration:none;
+          "
+        >
+          Típicos
+        </a>
+
+      </div>
+
+
+
+      <!-- =========================
+           PRODUCTOS
+      ========================== -->
+
+      <div class="productos">
+
+
+
+        <!-- PESCA DOBLE -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=PESCA+DOBLE"
+            alt="Pesca Doble Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Pesca Doble</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Juego electrónico entretenido y dinámico,
+              perfecto para los más pequeños.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              👦 Hasta 10 años
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Pesca Doble', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- DISPAROS DOBLE -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=DISPAROS+DOBLE"
+            alt="Disparos Doble Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Disparos Doble</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Diversión y competencia para poner
+              a prueba la puntería.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              👦 Hasta 10 años
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Disparos Doble', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- MANUBRIO -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=MANUBRIO"
+            alt="Manubrio Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Manubrio</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Juego electrónico para disfrutar,
+              competir y pasar un gran momento.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              👦 Hasta 10 años
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Manubrio', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- PELOTITAS -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=PELOTITAS"
+            alt="Pelotitas Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Pelotitas</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Una alternativa entretenida y dinámica
+              para llenar de diversión tu evento.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              👦 Hasta 10 años
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Pelotitas', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- PARKOUR -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=PARKOUR"
+            alt="Parkour Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Parkour</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Juego de movimiento y desafío
+              para los niños que no paran de jugar.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              👦 Hasta 10 años
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Parkour', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- MOTO -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=MOTO"
+            alt="Moto Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Moto</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Una experiencia electrónica entretenida
+              para disfrutar y competir.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              👦 Hasta 10 años
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Moto', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- TOPO VERDE RANA -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=TOPO+VERDE+RANA"
+            alt="Topo Verde Rana Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Topo Verde Rana</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Juego divertido y dinámico para
+              disfrutar durante el evento.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              👦 Hasta 10 años
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Topo Verde Rana', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ARDILLA -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=ARDILLA"
+            alt="Ardilla Kiddie Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Ardilla</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Juego Kiddie pensado especialmente
+              para los más pequeños.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              👶 <strong>Máximo 4 años</strong>
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Ardilla', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- COHETE -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=COHETE"
+            alt="Cohete Kiddie Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Cohete</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Una entretenida experiencia espacial
+              para los más pequeños.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              👶 <strong>Máximo 4 años</strong>
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Cohete', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ASTRONAUTA -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=ASTRONAUTA"
+            alt="Astronauta Kiddie Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Astronauta</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Una aventura espacial diseñada
+              especialmente para los más pequeños.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              👶 <strong>Máximo 4 años</strong>
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Astronauta', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- MANZANITA -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=MANZANITA"
+            alt="Manzanita Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Manzanita</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Juego electrónico para disfrutar
+              de una experiencia entretenida.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              👦 Hasta 10 años
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Manzanita', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- MANEJO DOBLE -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=MANEJO+DOBLE"
+            alt="Manejo Doble Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Manejo Doble</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Diversión para compartir y competir
+              junto a otra persona.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              👦 Hasta 10 años
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Manejo Doble', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- PELUCHERA TOY -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=PELUCHERA+TOY"
+            alt="Peluchera Toy Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Peluchera Toy</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Porque nunca se es demasiado grande
+              para intentar sacar un peluche. 😂
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              🎂 <strong>Hasta 99 años</strong>
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Peluchera Toy', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- PELUCHERA SPACE -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=PELUCHERA+SPACE"
+            alt="Peluchera Space Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Peluchera Space</h3>
+
+            <div class="precio">
+              $53.550
+            </div>
+
+            <div class="medidas">
+              IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Una experiencia entretenida para
+              todas las edades.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              🎂 <strong>Hasta 99 años</strong>
+
+              <br>
+
+              🎟️ <strong>Free Pass incluido</strong>
+
+              <br>
+
+              🪙 No requiere fichas ni monedas
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Peluchera Space', 53550)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         LLAMADO FINAL
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="titulo-seccion">
+
+        <h2>
+          Diversión sin fichas ni monedas 🎟️
+        </h2>
+
+        <p>
+          Todos nuestros juegos electrónicos
+          funcionan con Free Pass incluido.
+        </p>
+
+        <br>
+
+        <a
+          href="carrito.html"
+          class="carrito"
+          style="
+            display:inline-block;
+            text-decoration:none;
+          "
+        >
+          🛒 Ver mi selección
+        </a>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       AVISO DEL CARRITO
+  ========================== -->
+
+  <div
+    id="toast"
+    class="toast"
+  >
+
+    <button
+      class="toast-cerrar"
+      onclick="cerrarToast()"
+      aria-label="Cerrar"
+    >
+      ×
+    </button>
+
+
+    <div class="toast-icono">
+      🛒
+    </div>
+
+
+    <div class="toast-texto">
+
+      <strong id="toast-titulo">
+        ¡Agregado al carrito!
+      </strong>
+
+      <p id="toast-mensaje">
+        El producto fue agregado a tu selección.
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-contenido">
+
+
+      <div>
+
+        <h3>
+          Mandi Eventos
+        </h3>
+
+        <p>
+          Juegos, entretención y experiencias
+          para hacer de cada celebración
+          un momento inolvidable.
+        </p>
+
+      </div>
+
+
+
+      <div>
+
+        <h3>
+          Juegos
+        </h3>
+
+        <p>
+          <a href="inflables.html">
+            Inflables
+          </a>
+        </p>
+
+        <p>
+          <a href="mecanicos.html">
+            Mecánicos
+          </a>
+        </p>
+
+        <p>
+          <a href="interactivos.html">
+            Interactivos
+          </a>
+        </p>
+
+        <p>
+          <a href="electronicos.html">
+            Electrónicos
+          </a>
+        </p>
+
+        <p>
+          <a href="juegos-tipicos.html">
+            Juegos Típicos
+          </a>
+        </p>
+
+      </div>
+
+
+
+      <div>
+
+        <h3>
+          Contacto
+        </h3>
+
+        <p>
+          ¿Quieres cotizar tu evento?
+        </p>
+
+        <p>
+          <a href="contacto.html">
+            Contáctanos →
+          </a>
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="footer-abajo">
+
+      © 2026 Mandi Eventos · Todos los derechos reservados
+
+    </div>
+
+
+  </footer>
+
+
+
+  <script src="carrito.js"></script>
+
+
+</body>
+
+</html>
