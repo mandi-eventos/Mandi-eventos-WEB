@@ -1,1 +1,1241 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Juegos Típicos | Mandi Eventos</title>
+
+  <meta
+    name="description"
+    content="Juegos típicos chilenos para eventos, celebraciones y Fiestas Patrias. Mandi Eventos."
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       ENCABEZADO
+  ========================== -->
+
+  <header>
+
+    <nav class="navbar">
+
+      <a href="index.html" class="logo">
+
+        MANDI
+
+        <span>EVENTOS</span>
+
+      </a>
+
+
+      <div class="menu">
+
+        <a href="index.html">Inicio</a>
+
+        <a href="index.html#juegos">Juegos</a>
+
+        <a href="eventos.html">Eventos</a>
+
+        <a href="galeria.html">Galería</a>
+
+        <a href="nosotros.html">Nosotros</a>
+
+        <a href="contacto.html">Contacto</a>
+
+
+        <a
+          href="carrito.html"
+          class="carrito"
+        >
+
+          🛒
+
+          <span>Carrito</span>
+
+          <span id="contador-carrito">
+            0
+          </span>
+
+        </a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+      <p
+        style="
+          color:#c79a3b;
+          font-weight:bold;
+          letter-spacing:3px;
+        "
+      >
+        MANDI EVENTOS
+      </p>
+
+
+      <h1>
+
+        Juegos
+
+        <span>
+          Típicos
+        </span>
+
+      </h1>
+
+
+      <p>
+
+        Tradición, competencia y diversión
+        para grandes y chicos.
+
+      </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         CATÁLOGO
+    ========================== -->
+
+    <section class="catalogo">
+
+
+      <div
+        style="
+          display:flex;
+          justify-content:center;
+          gap:10px;
+          flex-wrap:wrap;
+          margin-bottom:45px;
+        "
+      >
+
+        <a
+          href="inflables.html"
+          style="
+            padding:12px 20px;
+            border:1px solid #ece8f0;
+            border-radius:30px;
+            background:white;
+            text-decoration:none;
+          "
+        >
+          Inflables
+        </a>
+
+
+        <a
+          href="mecanicos.html"
+          style="
+            padding:12px 20px;
+            border:1px solid #ece8f0;
+            border-radius:30px;
+            background:white;
+            text-decoration:none;
+          "
+        >
+          Mecánicos
+        </a>
+
+
+        <a
+          href="interactivos.html"
+          style="
+            padding:12px 20px;
+            border:1px solid #ece8f0;
+            border-radius:30px;
+            background:white;
+            text-decoration:none;
+          "
+        >
+          Interactivos
+        </a>
+
+
+        <a
+          href="electronicos.html"
+          style="
+            padding:12px 20px;
+            border:1px solid #ece8f0;
+            border-radius:30px;
+            background:white;
+            text-decoration:none;
+          "
+        >
+          Electrónicos
+        </a>
+
+
+        <a
+          href="juegos-tipicos.html"
+          class="carrito"
+          style="
+            padding:12px 20px;
+            text-decoration:none;
+          "
+        >
+          Típicos
+        </a>
+
+      </div>
+
+
+
+      <!-- =========================
+           PRODUCTOS
+      ========================== -->
+
+      <div class="productos">
+
+
+
+        <!-- RAYUELA -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=RAYUELA"
+            alt="Rayuela Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Rayuela</h3>
+
+            <div class="precio">$47.600</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Tradicional juego chileno de precisión,
+              ideal para Fiestas Patrias, fondas,
+              colegios y celebraciones.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Rayuela', 47600)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- JENGA -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=JENGA+GIGANTE"
+            alt="Jenga Gigante Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Jenga Gigante</h3>
+
+            <div class="precio">$47.600</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Pon a prueba el pulso y la concentración
+              retirando los bloques sin derribar la torre.
+              Diversión para todas las edades.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Jenga Gigante', 47600)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- TIRO A LA BOTELLA -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=TIRO+A+LA+BOTELLA"
+            alt="Tiro a la Botella Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Tiro a la Botella</h3>
+
+            <div class="precio">$47.600</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Juego de puntería y precisión.
+              ¡Ideal para Fiestas Patrias,
+              colegios y eventos recreativos!
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Tiro a la Botella', 47600)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- DOMINÓ -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=DOMINO+GIGANTE"
+            alt="Dominó Gigante Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Dominó Gigante</h3>
+
+            <div class="precio">$41.650</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Clásico juego de estrategia en formato
+              gigante, ideal para compartir en familia,
+              colegios y eventos.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Dominó Gigante', 41650)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- LANZAMIENTO DE AROS -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=LANZAMIENTO+DE+AROS"
+            alt="Lanzamiento de Aros Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Lanzamiento de Aros</h3>
+
+            <div class="precio">$29.750</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Juego de precisión donde el objetivo
+              es encestar los aros para sumar puntos.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Lanzamiento de Aros', 29750)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- BOWLING -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=BOWLING"
+            alt="Bowling Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Bowling</h3>
+
+            <div class="precio">$35.700</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Derriba todos los bolos con la menor
+              cantidad de lanzamientos en este clásico
+              juego de precisión.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Bowling', 35700)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- TIRO ARGOLLA -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=TIRO+ARGOLLA"
+            alt="Tiro Argolla Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Tiro Argolla</h3>
+
+            <div class="precio">$29.750</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Juego de precisión ideal para todas
+              las edades, donde el objetivo es
+              encestar las argollas.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Tiro Argolla', 29750)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ARO AL PALO -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=ARO+AL+PALO"
+            alt="Aro al Palo Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Aro al Palo</h3>
+
+            <div class="precio">$29.750</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Juego de precisión donde debes encestar
+              los aros en los palos para sumar puntos.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Aro al Palo', 29750)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- TIRO AL GATO -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=TIRO+AL+GATO"
+            alt="Tiro al Gato Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Tiro al Gato</h3>
+
+            <div class="precio">$41.650</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Desafía tu puntería lanzando los
+              implementos al objetivo.
+              Un clásico de las ferias tradicionales.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Tiro al Gato', 41650)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- PUNTERÍA DE SACOS -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=PUNTERIA+DE+SACOS"
+            alt="Puntería de Sacos Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Puntería de Sacos</h3>
+
+            <div class="precio">$29.750</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Lanza los saquitos hacia las zonas
+              de mayor puntaje y compite por obtener
+              la mejor puntuación.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Puntería de Sacos', 29750)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- TIRO AL TARRO -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=TIRO+AL+TARRO"
+            alt="Tiro al Tarro Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Tiro al Tarro</h3>
+
+            <div class="precio">$29.750</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Derriba la mayor cantidad de tarros
+              con la menor cantidad de lanzamientos
+              y demuestra tu precisión.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Tiro al Tarro', 29750)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- GATO GIGANTE -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=GATO+GIGANTE"
+            alt="Gato Gigante Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Gato Gigante</h3>
+
+            <div class="precio">$29.750</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              La versión XL del clásico tres en línea,
+              ideal para jugar en equipos y al aire libre.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Gato Gigante', 29750)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- EMBOQUES -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=SET+DE+EMBOQUES"
+            alt="Set de Emboques Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Set de Emboques</h3>
+
+            <div class="precio">$29.750</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Incluye emboques pequeño, mediano
+              y gigante. Un clásico chileno que desafía
+              la coordinación y la destreza.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Set de Emboques', 29750)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- TIRAR LA CUERDA -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=TIRAR+LA+CUERDA"
+            alt="Tirar la Cuerda Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Tirar la Cuerda</h3>
+
+            <div class="precio">$29.750</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Competencia entretenida que fomenta
+              el trabajo en equipo y la participación
+              de niños y adultos.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Tirar la Cuerda', 29750)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- CARRERA EN SACO -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=CARRERA+EN+SACO"
+            alt="Carrera en Saco Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Carrera en Saco</h3>
+
+            <div class="precio">$29.750</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Desafío de fuerza y coordinación ideal
+              para competencias grupales y actividades
+              recreativas.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Carrera en Saco', 29750)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- TROMPOS -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=SET+DE+TROMPOS"
+            alt="Set de Trompos Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Set de Trompos</h3>
+
+            <div class="precio">$29.750</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Revive una de las tradiciones chilenas
+              aprendiendo y compitiendo con este
+              clásico juego.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Set de Trompos', 29750)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- LA RANA -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=LA+RANA"
+            alt="La Rana Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>La Rana</h3>
+
+            <div class="precio">$47.600</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Tradicional juego de habilidad donde
+              deberás encestar los tejos en los
+              diferentes orificios para sumar puntos.
+              Incluye 5 tejos.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('La Rana', 47600)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- TIRO DE CANICAS -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=TIRO+DE+CANICAS"
+            alt="Tiro de Canicas Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Tiro de Canicas</h3>
+
+            <div class="precio">$35.700</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Lanza las canicas y acumula la mayor
+              cantidad de puntos según el lugar
+              donde caigan.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Tiro de Canicas', 35700)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- PESCA MILAGROSA -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=PESCA+MILAGROSA"
+            alt="Pesca Milagrosa Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Pesca Milagrosa</h3>
+
+            <div class="precio">$29.750</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Atrapa la mayor cantidad de peces
+              utilizando las cañas de pesca.
+              Incluye 3 cañas.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Pesca Milagrosa', 29750)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- DARDOS -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=DARDOS"
+            alt="Dardos Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Dardos</h3>
+
+            <div class="precio">$35.700</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Juego de precisión donde los participantes
+              deberán acertar al blanco para obtener
+              la mayor puntuación.
+            </p>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Dardos', 35700)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- FERIA AMERICANA -->
+
+        <article class="producto">
+
+          <img
+            src="https://placehold.co/800x600/faf9fc/35145f?text=FERIA+AMERICANA"
+            alt="Feria Americana Mandi Eventos"
+            class="producto-imagen"
+          >
+
+          <div class="producto-info">
+
+            <h3>Feria Americana</h3>
+
+            <div class="precio">$95.200</div>
+
+            <div class="medidas">
+              4 horas · IVA incluido
+            </div>
+
+            <p class="descripcion">
+              Conjunto de juegos de destreza y
+              puntería, ideal para eventos masivos.
+              Incluye 2 juegos y monitor de apoyo.
+            </p>
+
+            <div
+              style="
+                margin:18px 0;
+                line-height:1.8;
+                color:#666;
+                font-size:14px;
+              "
+            >
+
+              🎯 Incluye 2 juegos
+
+              <br>
+
+              👤 Monitor a cargo
+
+              <br>
+
+              🎁 Incluye 30 premios
+
+            </div>
+
+            <button
+              class="btn-carrito"
+              onclick="agregarAlCarrito('Feria Americana', 95200)"
+            >
+              🛒 Agregar al carrito
+            </button>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         INFORMACIÓN IMPORTANTE
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="titulo-seccion">
+
+        <h2>
+          🇨🇱 Juegos para compartir
+        </h2>
+
+        <p>
+          Los valores corresponden a 4 horas
+          de servicio.
+        </p>
+
+        <p>
+          <strong>
+            Arriendo mínimo total: $100.000
+          </strong>
+        </p>
+
+        <p>
+          Puedes combinar distintos juegos
+          para alcanzar el monto mínimo.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CARRITO
+    ========================== -->
+
+    <div
+      id="toast"
+      class="toast"
+    >
+
+      <button
+        class="toast-cerrar"
+        onclick="cerrarToast()"
+        aria-label="Cerrar"
+      >
+        ×
+      </button>
+
+      <div class="toast-icono">
+        🛒
+      </div>
+
+      <div class="toast-texto">
+
+        <strong id="toast-titulo">
+          ¡Agregado al carrito!
+        </strong>
+
+        <p id="toast-mensaje">
+          El producto fue agregado a tu selección.
+        </p>
+
+      </div>
+
+    </div>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-contenido">
+
+
+      <div>
+
+        <h3>
+          Mandi Eventos
+        </h3>
+
+        <p>
+          Juegos, entretención y experiencias
+          para hacer de cada celebración
+          un momento inolvidable.
+        </p>
+
+      </div>
+
+
+
+      <div>
+
+        <h3>
+          Juegos
+        </h3>
+
+        <p>
+          <a href="inflables.html">
+            Inflables
+          </a>
+        </p>
+
+        <p>
+          <a href="mecanicos.html">
+            Mecánicos
+          </a>
+        </p>
+
+        <p>
+          <a href="interactivos.html">
+            Interactivos
+          </a>
+        </p>
+
+        <p>
+          <a href="electronicos.html">
+            Electrónicos
+          </a>
+        </p>
+
+        <p>
+          <a href="juegos-tipicos.html">
+            Juegos Típicos
+          </a>
+        </p>
+
+      </div>
+
+
+
+      <div>
+
+        <h3>
+          Contacto
+        </h3>
+
+        <p>
+          ¿Quieres cotizar tu evento?
+        </p>
+
+        <p>
+          <a href="contacto.html">
+            Contáctanos →
+          </a>
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="footer-abajo">
+
+      © 2026 Mandi Eventos · Todos los derechos reservados
+
+    </div>
+
+  </footer>
+
+
+
+  <script src="carrito.js"></script>
+
+
+</body>
+
+</html>
