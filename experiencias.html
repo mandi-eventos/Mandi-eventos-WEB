@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Juegos Interactivos | Mandi Eventos</title>
+
+  <meta
+    name="description"
+    content="Juegos interactivos para cumpleaños, empresas, activaciones y eventos. Mete Gol, Tiro al Blanco, Cámara 360, Atrapa Bastones y más. Mandi Eventos."
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       ENCABEZADO
+  ========================== -->
+
+  <header>
+
+    <nav class="navbar">
+
+      <a href="index.html" class="logo">
+
+        MANDI
+
+        <span>EVENTOS</span>
+
+      </a>
+
+
+      <div class="menu">
+
+        <a href="index.html">
+          Inicio
+        </a>
+
+        <a href="index.html#juegos">
+          Juegos
+        </a>
+
+        <a href="eventos.html">
+          Eventos
+        </a>
+
+        <a href="galeria.html">
+          Galería
+        </a>
+
+        <a href="nosotros.html">
+          Nosotros
+        </a>
+
+        <a href="contacto.html">
+          Contacto
+        </a>
+
+
+        <a
+          href="carrito.html"
+          class="carrito"
+        >
+
+          🛒
+
+          <span>
+            Carrito
+          </span>
+
+          <span id="contador-carrito">
+            0
+          </span>
+
+        </a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =========================
+       CONTENIDO
+  ========================== -->
+
+  <main>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <p
+        style="
+          color:#c79a3b;
+          font-weight:bold;
+          letter-spacing:3px;
+        "
+      >
+        MANDI EVENTOS
+      </p>
+
+
+      <h1>
+
+        Juegos
+
+        <span>
+          Interactivos
+        </span>
+
+      </h1>
+
+
+      <p>
+
+        Juegos que invitan a participar,
+        competir y disfrutar.
+
+      </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         CATEGORÍAS
+    ========================== -->
+
+    <section class="catalogo">
+
+
+      <div
+        style="
+          display:flex;
+          justify-content:center;
+          gap:10px;
+          flex-wrap:wrap;
+          margin-bottom:45px;
+        "
+      >
+
+
+        <a
+          href="inflables.html"
+          style="
+            padding:12px 20px;
+            border:1px solid #ece8f0;
+            border-radius:30px;
+            background:white;
+            text-decoration:none;
+          "
+        >
+          Inflables
+        </a>
+
+
+        <a
+          href="mecanicos.html"
+          style="
+            padding:12px 20px;
+            border:1px solid #ece8f0;
+            border-radius:30px;
+            background:white;
+            text-decoration:none;
+          "
+        >
+          Mecánicos
+        </a>
+
+
+        <a
+          href="interactivos.html"
+          class="carrito"
+          style="
+            padding:12px 20px;
+            text-decoration:none;
+          "
+        >
+          Interactivos
+        </a>
+
+
+        <a
+          href="electronicos.html"
+          style="
+            padding:12px 20px;
+            border:1px solid #ece8f0;
+            border-radius:30px;
+            background:white;
+            text-decoration:none;
+          "
+        >
+          Electrónicos
+        </a>
+
+
+        <a
+          href="juegos-tipicos.html"
+          style="
+            padding:12px 20px;
+            border:1px solid #ece8f0;
+            border-radius:30px;
+            background:white;
+            text-decoration:none;
+          "
+        >
+          Típicos
+        </a>
+
+
+      </div>
+
+
+
+      <!-- =========================
+           PRODUCTOS
+      ========================== -->
+
+
+
+
+
+
+
+      
+    <!-- =========================
+         LLAMADO FINAL
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="titulo-seccion">
+
+
+        <h2>
+          ¿Listo para jugar?
+        </h2>
+
+
+        <p>
+
+          Elige tus juegos favoritos y
+          solicita una cotización para tu evento.
+
+        </p>
+
+
+        <br>
+
+
+        <a
+          href="carrito.html"
+          class="carrito"
+          style="
+            display:inline-block;
+            text-decoration:none;
+          "
+        >
+
+          🛒 Ver mi selección
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       AVISO DEL CARRITO
+  ========================== -->
+
+  <div
+    id="toast"
+    class="toast"
+  >
+
+
+    <button
+      class="toast-cerrar"
+      onclick="cerrarToast()"
+      aria-label="Cerrar"
+    >
+
+      ×
+
+    </button>
+
+
+    <div class="toast-icono">
+
+      🛒
+
+    </div>
+
+
+    <div class="toast-texto">
+
+      <strong id="toast-titulo">
+
+        ¡Agregado al carrito!
+
+      </strong>
+
+
+      <p id="toast-mensaje">
+
+        El producto fue agregado a tu selección.
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+
+    <div class="footer-contenido">
+
+
+      <div>
+
+        <h3>
+          Mandi Eventos
+        </h3>
+
+
+        <p>
+
+          Juegos, entretención y experiencias
+          para hacer de cada celebración
+          un momento inolvidable.
+
+        </p>
+
+      </div>
+
+
+
+      <div>
+
+        <h3>
+          Juegos
+        </h3>
+
+
+        <p>
+          <a href="inflables.html">
+            Inflables
+          </a>
+        </p>
+
+
+        <p>
+          <a href="mecanicos.html">
+            Mecánicos
+          </a>
+        </p>
+
+
+        <p>
+          <a href="interactivos.html">
+            Interactivos
+          </a>
+        </p>
+
+
+        <p>
+          <a href="electronicos.html">
+            Electrónicos
+          </a>
+        </p>
+
+
+        <p>
+          <a href="juegos-tipicos.html">
+            Juegos Típicos
+          </a>
+        </p>
+
+      </div>
+
+
+
+      <div>
+
+        <h3>
+          Contacto
+        </h3>
+
+
+        <p>
+
+          ¿Quieres cotizar tu evento?
+
+        </p>
+
+
+        <p>
+
+          <a href="contacto.html">
+            Contáctanos →
+          </a>
+
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="footer-abajo">
+
+      © 2026 Mandi Eventos · Todos los derechos reservados
+
+    </div>
+
+
+  </footer>
+
+
+
+  <script src="carrito.js"></script>
+
+
+</body>
+
+</html>
