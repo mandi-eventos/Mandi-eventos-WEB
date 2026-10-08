@@ -316,8 +316,7 @@ function solicitarCotizacion() {
     Aquí después pondremos tu número real de WhatsApp.
   */
 
-  const telefono = "";
-
+const telefono = "56935167953";
 
   if (!telefono) {
 
