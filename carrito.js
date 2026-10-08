@@ -288,8 +288,8 @@ function solicitarCotizacion() {
   }
 
   let mensaje =
-    "Hola Mandi Eventos 👋%0A%0A" +
-    "Quiero cotizar los siguientes juegos:%0A%0A";
+    "Hola Mandi Eventos 👋\n\n" +
+    "Quiero cotizar los siguientes juegos:\n\n";
 
   let totalGeneral = 0;
 
@@ -304,23 +304,25 @@ function solicitarCotizacion() {
       "• " + producto.nombre +
       " x" + cantidad +
       " — $" + subtotal.toLocaleString("es-CL") +
-      "%0A";
+      "\n";
   });
 
   mensaje +=
-    "%0A--------------------%0A" +
-    "Total de juegos: $" +
+    "\n--------------------\n" +
+    "TOTAL DE JUEGOS: $" +
     totalGeneral.toLocaleString("es-CL") +
-    "%0A%0A" +
+    "\n\n" +
     "Quisiera conocer disponibilidad y valor para mi evento. 😊";
 
   const telefono = "56935167953";
 
   window.open(
-    "https://wa.me/" + telefono + "?text=" + mensaje,
+    "https://wa.me/" + telefono +
+    "?text=" + encodeURIComponent(mensaje),
     "_blank"
   );
 }
+
 
 
 document.addEventListener(
