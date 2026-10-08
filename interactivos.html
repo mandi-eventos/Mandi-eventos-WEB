@@ -169,6 +169,18 @@
           Inflables
         </a>
 
+        <a
+          href="experiencias.html"
+          style="
+            padding:12px 20px;
+            border:1px solid #ece8f0;
+            border-radius:30px;
+            background:white;
+            text-decoration:none;
+          "
+        >
+          Experiencias
+        </a>
 
         <a
           href="mecanicos.html"
@@ -712,7 +724,36 @@
 
   </footer>
 
+<!-- VISOR DE IMÁGENES -->
+<div id="visorImagen" class="visor-imagen">
+  <button class="cerrar-visor" onclick="cerrarImagen()">×</button>
+  <img id="imagenGrande" src="" alt="">
+</div>
 
+<script>
+  const imagenes = document.querySelectorAll('.producto-imagen');
+  const visor = document.getElementById('visorImagen');
+  const imagenGrande = document.getElementById('imagenGrande');
+
+  imagenes.forEach(imagen => {
+    imagen.addEventListener('click', () => {
+      imagenGrande.src = imagen.src;
+      imagenGrande.alt = imagen.alt;
+      visor.classList.add('activo');
+    });
+  });
+
+  function cerrarImagen() {
+    visor.classList.remove('activo');
+    imagenGrande.src = '';
+  }
+
+  visor.addEventListener('click', (e) => {
+    if (e.target === visor) {
+      cerrarImagen();
+    }
+  });
+</script>
 
   <script src="carrito.js"></script>
 
