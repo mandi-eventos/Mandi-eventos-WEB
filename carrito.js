@@ -277,67 +277,49 @@ function cerrarToast() {
 }
 
 
+
 function solicitarCotizacion() {
-
   if (carrito.length === 0) {
-
     mostrarToast(
       "Tu selección está vacía",
       "Agrega al menos un juego antes de solicitar una cotización."
     );
-
     return;
-
   }
-
 
   let mensaje =
     "Hola Mandi Eventos 👋%0A%0A" +
     "Quiero cotizar los siguientes juegos:%0A%0A";
 
+  let totalGeneral = 0;
 
   carrito.forEach(producto => {
+    const cantidad = Number(producto.cantidad) || 1;
+    const precioUnitario = Number(producto.precio) || 0;
+    const subtotal = precioUnitario * cantidad;
+
+    totalGeneral += subtotal;
 
     mensaje +=
-      "• " +
-      producto.nombre +
-      " x" +
-      producto.cantidad +
+      "• " + producto.nombre +
+      " x" + cantidad +
+      " — $" + subtotal.toLocaleString("es-CL") +
       "%0A";
-
   });
 
-
   mensaje +=
-    "%0AQuisiera conocer disponibilidad y valor para mi evento. 😊";
+    "%0A--------------------%0A" +
+    "Total de juegos: $" +
+    totalGeneral.toLocaleString("es-CL") +
+    "%0A%0A" +
+    "Quisiera conocer disponibilidad y valor para mi evento. 😊";
 
-
-  /*
-    Aquí después pondremos tu número real de WhatsApp.
-  */
-
-const telefono = "56935167953";
-
-  if (!telefono) {
-
-    mostrarToast(
-      "¡Tu selección está lista!",
-      "Después conectaremos este botón con tu WhatsApp."
-    );
-
-    return;
-
-  }
-
+  const telefono = "56935167953";
 
   window.open(
-    "https://wa.me/" +
-    telefono +
-    "?text=" +
-    mensaje,
+    "https://wa.me/" + telefono + "?text=" + mensaje,
     "_blank"
   );
-
 }
 
 
