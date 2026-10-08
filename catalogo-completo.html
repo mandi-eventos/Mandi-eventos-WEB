@@ -1,1 +1,464 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Catálogo Completo | Mandi Eventos</title>
+  <meta name="description" content="Descubre todos los juegos, inflables y experiencias de Mandi Eventos. Busca tus favoritos y cotiza por WhatsApp.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .catalogo-completo {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 25px 16px 60px;
+      box-sizing: border-box;
+    }
+
+    .catalogo-intro {
+      text-align: center;
+      padding: 35px 15px;
+      margin-bottom: 25px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #35104f, #702c91);
+      color: white;
+    }
+
+    .catalogo-intro h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 5vw, 42px);
+    }
+
+    .catalogo-intro p {
+      margin: 0 auto;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .buscador-completo {
+      max-width: 700px;
+      margin: 25px auto;
+    }
+
+    .buscador-completo input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 16px 18px;
+      border: 2px solid #e3d3ed;
+      border-radius: 14px;
+      font-size: 16px;
+      outline: none;
+      background: white;
+    }
+
+    .buscador-completo input:focus {
+      border-color: #702c91;
+    }
+
+    .filtros-catalogo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+      margin: 20px 0 35px;
+    }
+
+    .filtros-catalogo button {
+      padding: 10px 16px;
+      border: 1px solid #dfd1e8;
+      border-radius: 25px;
+      background: white;
+      color: #48205d;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .filtros-catalogo button.activo,
+    .filtros-catalogo button:hover {
+      background: #702c91;
+      color: white;
+      border-color: #702c91;
+    }
+
+    .categoria-completa {
+      width: 100%;
+      margin: 35px auto;
+      scroll-margin-top: 20px;
+    }
+
+    .categoria-completa h2 {
+      color: #572573;
+      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e8d9ef;
+    }
+
+    .categoria-completa .descripcion-categoria {
+      margin: 0 0 20px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .categoria-completa .productos {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .categoria-completa .producto {
+      min-width: 0;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    .categoria-completa .producto img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .estado-carga,
+    .sin-resultados {
+      padding: 22px;
+      margin: 15px 0;
+      text-align: center;
+      background: #f7f1fa;
+      border-radius: 12px;
+      color: #572573;
+      line-height: 1.6;
+    }
+
+    .oculto {
+      display: none !important;
+    }
+
+    .boton-cotizar-catalogo {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 13px 23px;
+      border-radius: 28px;
+      background: #f0c45b;
+      color: #35104f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .catalogo-completo {
+        padding: 16px 10px 40px;
+      }
+
+      .catalogo-intro {
+        padding: 28px 14px;
+      }
+
+      .categoria-completa .productos {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">MANDI <span>EVENTOS</span></a>
+
+      <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#juegos">Juegos</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="galeria.html">Galería</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html" class="carrito">
+          🛒 Carrito <span id="contador-carrito">0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="catalogo-completo">
+
+    <section class="catalogo-intro">
+      <h1>🎉 Catálogo Completo</h1>
+      <p>
+        ¡Encuentra la diversión para tu próximo evento!
+        Explora nuestros juegos, inflables y experiencias.
+        Busca tus favoritos y agrégalos a tu carrito para cotizar.
+      </p>
+      <a href="contacto.html" class="boton-cotizar-catalogo">
+        💬 Cotizar mi evento
+      </a>
+    </section>
+
+    <div class="buscador-completo">
+      <input
+        type="search"
+        id="buscar-producto"
+        placeholder="🔎 Busca un juego por su nombre..."
+        autocomplete="off"
+        aria-label="Buscar productos del catálogo"
+      >
+    </div>
+
+    <div class="filtros-catalogo" id="filtros-catalogo">
+      <button type="button" class="activo" data-filtro="todos">
+        Todos los juegos
+      </button>
+      <button type="button" data-filtro="inflables">🎈 Inflables</button>
+      <button type="button" data-filtro="mecanicos">🎯 Mecánicos</button>
+      <button type="button" data-filtro="interactivos">🎮 Interactivos</button>
+      <button type="button" data-filtro="electronicos">🕹️ Electrónicos</button>
+      <button type="button" data-filtro="salon">🏠 Juegos de salón</button>
+      <button type="button" data-filtro="tipicos">🎪 Juegos típicos</button>
+      <button type="button" data-filtro="infantil">🧸 Zona infantil</button>
+      <button type="button" data-filtro="agua">💦 Juegos de agua</button>
+      <button type="button" data-filtro="espuma">🫧 Fiesta de espuma</button>
+      <button type="button" data-filtro="experiencias">✨ Experiencias</button>
+    </div>
+
+    <p id="estado-catalogo" class="estado-carga" aria-live="polite">
+      Cargando todos nuestros juegos...
+    </p>
+
+    <div id="contenedor-catalogo">
+
+      <section class="categoria-completa" id="categoria-inflables" data-categoria="inflables">
+        <h2>🎈 Juegos Inflables</h2>
+        <p class="descripcion-categoria">Diversión para cumpleaños, colegios, empresas y celebraciones.</p>
+        <div class="productos" data-productos="inflables"></div>
+      </section>
+
+      <section class="categoria-completa" id="categoria-mecanicos" data-categoria="mecanicos">
+        <h2>🎯 Juegos Mecánicos</h2>
+        <p class="descripcion-categoria">Desafíos y entretención para tus invitados.</p>
+        <div class="productos" data-productos="mecanicos"></div>
+      </section>
+
+      <section class="categoria-completa" id="categoria-interactivos" data-categoria="interactivos">
+        <h2>🎮 Juegos Interactivos</h2>
+        <p class="descripcion-categoria">Juegos para compartir, competir y divertirse.</p>
+        <div class="productos" data-productos="interactivos"></div>
+      </section>
+
+      <section class="categoria-completa" id="categoria-electronicos" data-categoria="electronicos">
+        <h2>🕹️ Juegos Electrónicos</h2>
+        <p class="descripcion-categoria">Máquinas y experiencias electrónicas para eventos.</p>
+        <div class="productos" data-productos="electronicos"></div>
+      </section>
+
+      <section class="categoria-completa" id="categoria-salon" data-categoria="salon">
+        <h2>🏠 Juegos de Salón</h2>
+        <p class="descripcion-categoria">Alternativas de entretención para interiores y celebraciones.</p>
+        <div class="productos" data-productos="salon"></div>
+      </section>
+
+      <section class="categoria-completa" id="categoria-tipicos" data-categoria="tipicos">
+        <h2>🎪 Juegos Típicos</h2>
+        <p class="descripcion-categoria">Juegos para ferias, colegios y eventos familiares.</p>
+        <div class="productos" data-productos="tipicos"></div>
+      </section>
+
+      <section class="categoria-completa" id="categoria-infantil" data-categoria="infantil">
+        <h2>🧸 Zona Infantil</h2>
+        <p class="descripcion-categoria">Opciones pensadas para los más pequeños.</p>
+        <div class="productos" data-productos="infantil"></div>
+      </section>
+
+      <section class="categoria-completa" id="categoria-agua" data-categoria="agua">
+        <h2>💦 Juegos de Agua</h2>
+        <p class="descripcion-categoria">Diversión refrescante para los días de calor.</p>
+        <div class="productos" data-productos="agua"></div>
+      </section>
+
+      <section class="categoria-completa" id="categoria-espuma" data-categoria="espuma">
+        <h2>🫧 Fiesta de Espuma</h2>
+        <p class="descripcion-categoria">Una experiencia diferente para tu celebración.</p>
+        <div class="productos" data-productos="espuma"></div>
+      </section>
+
+      <section class="categoria-completa" id="categoria-experiencias" data-categoria="experiencias">
+        <h2>✨ Experiencias</h2>
+        <p class="descripcion-categoria">Experiencias especiales para hacer inolvidable tu evento.</p>
+        <div class="productos" data-productos="experiencias"></div>
+      </section>
+
+    </div>
+
+    <p id="sin-resultados" class="sin-resultados oculto">
+      No encontramos juegos con ese nombre. Prueba con otra búsqueda.
+    </p>
+
+  </main>
+
+  <footer>
+    <p>© Mandi Eventos. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="carrito.js"></script>
+
+  <script>
+    const categorias = [
+      { id: "inflables", archivo: "inflables.html" },
+      { id: "mecanicos", archivo: "mecanicos.html" },
+      { id: "interactivos", archivo: "interactivos.html" },
+      { id: "electronicos", archivo: "electronicos.html" },
+      { id: "salon", archivo: "juegos-salon.html" },
+      { id: "tipicos", archivo: "juegos-tipicos.html" },
+      { id: "infantil", archivo: "zona-infantil.html" },
+      { id: "agua", archivo: "juegos-de-agua.html" },
+      { id: "espuma", archivo: "fiesta-espuma.html" },
+      { id: "experiencias", archivo: "experiencias.html" }
+    ];
+
+    const buscador = document.getElementById("buscar-producto");
+    const estado = document.getElementById("estado-catalogo");
+    const mensajeSinResultados = document.getElementById("sin-resultados");
+    const botonesFiltro = document.querySelectorAll("[data-filtro]");
+
+    let filtroActual = "todos";
+    let categoriasCargadas = 0;
+    let categoriasConError = 0;
+
+    function normalizar(texto) {
+      return (texto || "")
+        .toLocaleLowerCase("es")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+    }
+
+    async function cargarCategoria(categoria) {
+      const contenedor = document.querySelector(
+        '[data-productos="' + categoria.id + '"]'
+      );
+
+      const seccion = document.querySelector(
+        '[data-categoria="' + categoria.id + '"]'
+      );
+
+      try {
+        const respuesta = await fetch(
+          categoria.archivo + "?v=" + Date.now(),
+          { cache: "no-store" }
+        );
+
+        if (!respuesta.ok) {
+          throw new Error("No se pudo abrir " + categoria.archivo);
+        }
+
+        const html = await respuesta.text();
+        const documento = new DOMParser().parseFromString(html, "text/html");
+        const productos = documento.querySelectorAll(".producto");
+
+        if (productos.length === 0) {
+          contenedor.innerHTML =
+            '<p class="estado-carga">No se encontraron tarjetas de productos en esta página.</p>';
+          categoriasCargadas++;
+          return;
+        }
+
+        productos.forEach((producto, indice) => {
+          const copia = document.importNode(producto, true);
+
+          copia.dataset.nombreBusqueda = normalizar(copia.textContent);
+
+          if (!copia.id) {
+            copia.id = "producto-" + categoria.id + "-" + indice;
+          }
+
+          contenedor.appendChild(copia);
+        });
+
+        categoriasCargadas++;
+
+      } catch (error) {
+        console.error("Error cargando " + categoria.archivo, error);
+
+        contenedor.innerHTML =
+          '<p class="estado-carga">No se pudo cargar esta categoría. Puedes visitar <a href="' +
+          categoria.archivo +
+          '">su página original</a>.</p>';
+
+        categoriasConError++;
+      }
+    }
+
+    function aplicarFiltros() {
+      const busqueda = normalizar(buscador.value);
+      let productosVisibles = 0;
+
+      document.querySelectorAll(".categoria-completa").forEach(seccion => {
+        const categoria = seccion.dataset.categoria;
+        const correspondeCategoria =
+          filtroActual === "todos" || filtroActual === categoria;
+
+        let visiblesEnSeccion = 0;
+
+        seccion.querySelectorAll(".producto").forEach(producto => {
+          const texto = producto.dataset.nombreBusqueda ||
+            normalizar(producto.textContent);
+
+          const coincide = correspondeCategoria && texto.includes(busqueda);
+
+          producto.classList.toggle("oculto", !coincide);
+
+          if (coincide) {
+            visiblesEnSeccion++;
+            productosVisibles++;
+          }
+        });
+
+        seccion.classList.toggle(
+          "oculto",
+          !correspondeCategoria || (busqueda !== "" && visiblesEnSeccion === 0)
+        );
+      });
+
+      mensajeSinResultados.classList.toggle(
+        "oculto",
+        productosVisibles !== 0
+      );
+    }
+
+    botonesFiltro.forEach(boton => {
+      boton.addEventListener("click", () => {
+        filtroActual = boton.dataset.filtro;
+
+        botonesFiltro.forEach(otro => {
+          otro.classList.toggle("activo", otro === boton);
+        });
+
+        aplicarFiltros();
+      });
+    });
+
+    buscador.addEventListener("input", aplicarFiltros);
+
+    async function iniciarCatalogo() {
+      await Promise.all(categorias.map(cargarCategoria));
+
+      estado.classList.add("oculto");
+
+      if (categoriasConError > 0) {
+        estado.textContent =
+          "Algunas categorías no pudieron cargarse. Revisa tu conexión o los nombres de los archivos.";
+        estado.classList.remove("oculto");
+      }
+
+      aplicarFiltros();
+    }
+
+    iniciarCatalogo();
+  </script>
+
+</body>
+</html>
