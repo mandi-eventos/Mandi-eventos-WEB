@@ -789,3 +789,48 @@ footer a {
   }
 
 }
+
+/* VISOR DE IMÁGENES */
+.producto-imagen {
+  cursor: zoom-in;
+}
+
+.visor-imagen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.visor-imagen.activo {
+  display: flex;
+}
+
+.visor-imagen img {
+  max-width: 95%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.cerrar-visor {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  color: #222;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10000;
+}
