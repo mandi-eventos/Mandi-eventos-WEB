@@ -829,8 +829,59 @@ footer a {
   border-radius: 50%;
   background: white;
   color: #222;
+/* TARJETAS DE CATEGORÍAS CON FOTOGRAFÍAS */
+
+.categorias-grid .categoria {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 18px;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categorias-grid .categoria:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(55, 20, 85, 0.18);
+}
+
+.categorias-grid .categoria-foto {
+  display: block;
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.categorias-grid .categoria h3 {
+  color: #351451;
+  margin: 16px 12px 6px;
+}
+
+.categorias-grid .categoria p {
+  color: #777;
+  margin: 0 14px 20px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .categorias-grid .categoria-foto {
+    height: 135px;
+  }
+
+  .categorias-grid .categoria h3 {
+    font-size: 15px;
+  }
+
+  .categorias-grid .categoria p {
+    font-size: 12px;
+  }
+}
   font-size: 32px;
   line-height: 1;
   cursor: pointer;
   z-index: 10000;
 }
+
