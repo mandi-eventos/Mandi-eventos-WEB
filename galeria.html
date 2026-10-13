@@ -595,11 +595,18 @@ function obtenerDatos(nombreArchivo) {
 
 
   // Títulos especiales
-  if (/fast fest/i.test(nombre)) {
-    titulo = "Fast Fest";
-  } else if (/truck fest/i.test(nombre)) {
-    titulo = "Truck Fest";
-  } else if (/festival emergente/i.test(nombre)) {
+  if (/peñaflor/i.test(nombre)) {
+  titulo = "Municipalidad de Peñaflor";
+  lugar = "Peñaflor";
+} else if (/fastfest4/i.test(nombre)) {
+  titulo = "Fast Fest";
+} else if (/fast fest/i.test(nombre)) {
+  titulo = "Fast Fest";
+} else if (/truck fest/i.test(nombre)) {
+  titulo = "Truck Fest";
+  }
+  
+  else if (/festival emergente/i.test(nombre)) {
     titulo = "Municipalidad de Pudahuel";
     lugar = "Pudahuel";
   } else if (/verano en tu barrio/i.test(nombre)) {
@@ -619,9 +626,7 @@ function obtenerDatos(nombreArchivo) {
   } else if (/independencia/i.test(nombre)) {
     titulo = "Municipalidad de Independencia";
     lugar = "Independencia";
-  } else if (/penaflor/i.test(nombre)) {
-    titulo = "Municipalidad de Peñaflor";
-    lugar = "Peñaflor";
+  
   } else if (/quilicura/i.test(nombre)) {
     titulo = "Municipalidad de Quilicura";
     lugar = "Quilicura";
