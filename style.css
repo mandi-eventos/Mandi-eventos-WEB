@@ -834,15 +834,37 @@ footer a {
 
 /* CATEGORÍAS MANDI EVENTOS */
 
+.categorias {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 35px 24px 70px;
+  box-sizing: border-box;
+}
+
+.categorias .titulo-seccion {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.categorias .titulo-seccion h2 {
+  color: #351451;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.categorias .titulo-seccion p {
+  color: #777;
+  margin-top: 8px;
+}
+
 .categorias .categorias-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
   width: 100%;
   max-width: 1100px;
-  margin: 30px auto;
-  padding: 0;
-  align-items: stretch;
+  margin: 0 auto;
 }
 
 .categorias .categorias-grid > a.categoria {
@@ -850,8 +872,6 @@ footer a {
   flex-direction: column;
   width: 100%;
   min-width: 0;
-  height: auto;
-  min-height: 0;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -862,21 +882,28 @@ footer a {
   border: 1px solid #eee7f3;
   border-radius: 16px;
   box-shadow: 0 3px 12px rgba(53, 20, 81, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.categorias .categorias-grid > a.categoria .categoria-foto {
+.categorias .categorias-grid > a.categoria:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(53, 20, 81, 0.12);
+}
+
+.categorias .categorias-grid > a.categoria > img.categoria-foto {
   display: block;
   flex: 0 0 170px;
   width: 100%;
   height: 170px;
-  min-height: 0;
   max-width: 100%;
+  min-width: 0;
   margin: 0;
   padding: 0;
   object-fit: cover;
   object-position: center;
   border: 0;
   border-radius: 0;
+  box-sizing: border-box;
 }
 
 .categorias .categorias-grid > a.categoria h3 {
@@ -893,15 +920,20 @@ footer a {
 }
 
 @media (max-width: 600px) {
-  .categorias .categorias-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 12px;
-    padding: 0 14px;
-    width: 100%;
-    box-sizing: border-box;
+  .categorias {
+    padding: 25px 12px 50px;
   }
 
-  .categorias .categorias-grid > a.categoria .categoria-foto {
+  .categorias .titulo-seccion h2 {
+    font-size: 25px;
+  }
+
+  .categorias .categorias-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .categorias .categorias-grid > a.categoria > img.categoria-foto {
     flex-basis: 125px;
     height: 125px;
   }
