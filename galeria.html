@@ -1,331 +1,802 @@
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Galería | Mandi Eventos</title>
-
-  <meta
-    name="description"
-    content="Galería de eventos y servicios de Mandi Eventos."
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de eventos | Mandi Eventos</title>
+  <meta name="description" content="Conoce la participación de Mandi Eventos en actividades infantiles, eventos municipales y colaboraciones con productoras.">
   <link rel="stylesheet" href="style.css">
 
-</head>
+  <style>
+    .galeria-intro {
+      padding: 65px 20px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #702c91, #421354);
+    }
 
+    .galeria-intro .etiqueta {
+      color: #f5c96a;
+      font-weight: 800;
+      letter-spacing: 3px;
+      font-size: 13px;
+    }
+
+    .galeria-intro h1 {
+      margin: 14px 0;
+      font-size: clamp(32px, 6vw, 52px);
+    }
+
+    .galeria-intro p {
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .galeria-contenedor {
+      max-width: 1200px;
+      margin: auto;
+      padding: 35px 16px 65px;
+    }
+
+    .galeria-presentacion {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+
+    .galeria-presentacion h2 {
+      color: #702c91;
+      margin-bottom: 10px;
+    }
+
+    .galeria-presentacion p {
+      line-height: 1.7;
+    }
+
+    .galeria-controles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .galeria-buscador {
+      width: 100%;
+      max-width: 440px;
+      padding: 13px 16px;
+      border: 1px solid #ded2e6;
+      border-radius: 25px;
+      font-size: 16px;
+      background: white;
+      color: #333;
+    }
+
+    .galeria-filtro {
+      border: 1px solid #702c91;
+      background: white;
+      color: #702c91;
+      padding: 11px 17px;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .galeria-filtro.activo,
+    .galeria-filtro:hover {
+      background: #702c91;
+      color: white;
+    }
+
+    .galeria-resumen {
+      text-align: center;
+      margin: 18px 0;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .galeria-tarjeta {
+      min-width: 0;
+      overflow: hidden;
+      background: white;
+      border-radius: 17px;
+      box-shadow: 0 5px 20px rgba(45, 20, 55, .10);
+      border: 1px solid #eee7f2;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .galeria-tarjeta:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 9px 25px rgba(45, 20, 55, .16);
+    }
+
+    .galeria-foto {
+      display: block;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      padding: 0;
+      border: 0;
+      background: #eee7f2;
+      cursor: zoom-in;
+      overflow: hidden;
+    }
+
+    .galeria-foto img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s ease;
+    }
+
+    .galeria-foto:hover img {
+      transform: scale(1.045);
+    }
+
+    .galeria-info {
+      padding: 15px;
+    }
+
+    .galeria-info h3 {
+      margin: 0 0 10px;
+      color: #51206b;
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .galeria-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .galeria-badge {
+      display: inline-block;
+      border-radius: 20px;
+      padding: 5px 9px;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .galeria-badge.propio {
+      background: #e7f5e9;
+      color: #236b37;
+    }
+
+    .galeria-badge.colaboracion {
+      background: #f0e5fa;
+      color: #64278a;
+    }
+
+    .galeria-lugar {
+      margin: 0 0 8px;
+      color: #6b536f;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .galeria-descripcion {
+      margin: 0;
+      color: #555;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .galeria-vacia {
+      display: none;
+      padding: 35px 15px;
+      text-align: center;
+      color: #666;
+    }
+
+    .galeria-contacto {
+      margin-top: 50px;
+      padding: 32px 20px;
+      border-radius: 20px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #702c91, #4d1768);
+    }
+
+    .galeria-contacto h2 {
+      margin-top: 0;
+    }
+
+    .galeria-contacto p {
+      line-height: 1.6;
+    }
+
+    .galeria-contacto a {
+      display: inline-block;
+      padding: 13px 23px;
+      margin-top: 8px;
+      border-radius: 28px;
+      background: #f5c96a;
+      color: #3b2048;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .galeria-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      padding: 55px 15px 20px;
+      background: rgba(15, 8, 20, .94);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .galeria-modal.abierto {
+      display: flex;
+    }
+
+    .galeria-modal img {
+      display: block;
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .galeria-modal-texto {
+      color: white;
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    .galeria-cerrar {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      width: 45px;
+      height: 45px;
+      border: 0;
+      border-radius: 50%;
+      color: white;
+      background: #702c91;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 850px) {
+      .galeria-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .galeria-info {
+        padding: 12px;
+      }
+
+      .galeria-info h3 {
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .galeria-grid {
+        gap: 9px;
+      }
+
+      .galeria-info {
+        padding: 10px;
+      }
+
+      .galeria-info h3 {
+        font-size: 14px;
+      }
+
+      .galeria-descripcion {
+        font-size: 12px;
+      }
+
+      .galeria-badge {
+        font-size: 10px;
+        padding: 4px 7px;
+      }
+    }
+  </style>
+</head>
 
 <body>
 
+<header>
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      MANDI
+      <span>EVENTOS</span>
+    </a>
 
-  <header>
-
-    <nav class="navbar">
-
-      <a href="index.html" class="logo">
-        MANDI
-        <span>EVENTOS</span>
+    <div class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#juegos">Juegos</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="galeria.html">Galería</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="carrito.html" class="carrito">
+        🛒 Carrito
+        <span id="contador-carrito">0</span>
       </a>
+    </div>
+  </nav>
+</header>
 
+<main>
+  <section class="galeria-intro">
+    <div class="etiqueta">MANDI EVENTOS</div>
+    <h1>Nuestra <span style="color:#f5c96a">galería</span></h1>
+    <p>
+      Conoce algunos de los eventos en los que hemos participado,
+      llevando juegos y entretención infantil a distintas comunas
+      y actividades junto a productoras.
+    </p>
+  </section>
 
-      <div class="menu">
-
-        <a href="index.html">Inicio</a>
-
-        <a href="index.html#juegos">Juegos</a>
-
-        <a href="eventos.html">Eventos</a>
-
-        <a href="galeria.html">Galería</a>
-
-        <a href="nosotros.html">Nosotros</a>
-
-        <a href="contacto.html">Contacto</a>
-
-        <a href="carrito.html" class="carrito">
-          🛒 Carrito
-          <span id="contador-carrito">0</span>
-        </a>
-
-      </div>
-
-    </nav>
-
-  </header>
-
-
-
-  <main>
-
-
-    <section class="hero">
-
-      <p
-        style="
-          color:#c79a3b;
-          font-weight:bold;
-          letter-spacing:3px;
-        "
-      >
-        MANDI EVENTOS
-      </p>
-
-
-      <h1>
-        Nuestra
-        <span>Galería</span>
-      </h1>
-
-
+  <section class="galeria-contenedor">
+    <div class="galeria-presentacion">
+      <h2>Momentos que nos encanta compartir</h2>
       <p>
-        Algunos de nuestros servicios y
-        momentos de entretención.
+        Participamos en actividades municipales, eventos privados
+        y producciones junto a otras empresas. En cada proyecto
+        mostramos nuestro trabajo en juegos y entretención infantil.
       </p>
+    </div>
 
-    </section>
-
-
-
-    <section class="catalogo">
-
-      <div class="titulo-seccion">
-
-        <h2>
-          Momentos Mandi Eventos
-        </h2>
-
-        <p>
-          Aquí podrás conocer nuestros juegos
-          y servicios a través de fotografías
-          reales de nuestros eventos.
-        </p>
-
-      </div>
-
-
-
-      <div
-        style="
-          max-width:1100px;
-          margin:0 auto;
-          display:grid;
-          grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-          gap:20px;
-        "
+    <div class="galeria-controles">
+      <input
+        type="search"
+        id="galeria-busqueda"
+        class="galeria-buscador"
+        placeholder="🔎 Buscar comuna o evento..."
+        aria-label="Buscar fotografías por evento o comuna"
       >
 
+      <button class="galeria-filtro activo" data-filtro="todos">
+        Todos
+      </button>
 
-        <!-- FOTO 1 -->
+      <button class="galeria-filtro" data-filtro="propio">
+        Producción propia
+      </button>
 
-        <div
-          style="
-            background:white;
-            border-radius:20px;
-            overflow:hidden;
-            box-shadow:0 10px 30px rgba(0,0,0,.06);
-          "
-        >
-
-          <img
-            src="https://placehold.co/800x600/faf9fc/35145f?text=Mandi+Eventos"
-            alt="Mandi Eventos"
-            style="
-              width:100%;
-              display:block;
-            "
-          >
-
-        </div>
-
-
-
-        <!-- FOTO 2 -->
-
-        <div
-          style="
-            background:white;
-            border-radius:20px;
-            overflow:hidden;
-            box-shadow:0 10px 30px rgba(0,0,0,.06);
-          "
-        >
-
-          <img
-            src="https://placehold.co/800x600/faf9fc/35145f?text=Eventos"
-            alt="Eventos Mandi"
-            style="
-              width:100%;
-              display:block;
-            "
-          >
-
-        </div>
-
-
-
-        <!-- FOTO 3 -->
-
-        <div
-          style="
-            background:white;
-            border-radius:20px;
-            overflow:hidden;
-            box-shadow:0 10px 30px rgba(0,0,0,.06);
-          "
-        >
-
-          <img
-            src="https://placehold.co/800x600/faf9fc/35145f?text=Juegos"
-            alt="Juegos Mandi Eventos"
-            style="
-              width:100%;
-              display:block;
-            "
-          >
-
-        </div>
-
-
-
-        <!-- FOTO 4 -->
-
-        <div
-          style="
-            background:white;
-            border-radius:20px;
-            overflow:hidden;
-            box-shadow:0 10px 30px rgba(0,0,0,.06);
-          "
-        >
-
-          <img
-            src="https://placehold.co/800x600/faf9fc/35145f?text=Celebraciones"
-            alt="Celebraciones Mandi Eventos"
-            style="
-              width:100%;
-              display:block;
-            "
-          >
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <section class="hero">
-
-      <div class="titulo-seccion">
-
-        <h2>
-          ¿Quieres ver nuestros juegos?
-        </h2>
-
-        <p>
-          Revisa el catálogo completo de
-          Mandi Eventos.
-        </p>
-
-        <br>
-
-        <a
-          href="index.html#juegos"
-          class="carrito"
-          style="
-            display:inline-block;
-            text-decoration:none;
-          "
-        >
-          🎉 Ver catálogo
-        </a>
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-
-  <footer>
-
-    <div class="footer-contenido">
-
-      <div>
-
-        <h3>Mandi Eventos</h3>
-
-        <p>
-          Juegos, entretención y experiencias
-          para hacer de cada celebración
-          un momento inolvidable.
-        </p>
-
-      </div>
-
-
-      <div>
-
-        <h3>Juegos</h3>
-
-        <p>
-          <a href="inflables.html">Inflables</a>
-        </p>
-
-        <p>
-          <a href="mecanicos.html">Mecánicos</a>
-        </p>
-
-        <p>
-          <a href="electronicos.html">Electrónicos</a>
-        </p>
-
-        <p>
-          <a href="juegos-de-agua.html">Juegos de Agua</a>
-        </p>
-
-      </div>
-
-
-      <div>
-
-        <h3>Contacto</h3>
-
-        <p>
-          ¿Quieres cotizar tu evento?
-        </p>
-
-        <p>
-          <a href="contacto.html">
-            Contáctanos →
-          </a>
-        </p>
-
-      </div>
-
+      <button class="galeria-filtro" data-filtro="colaboracion">
+        Colaboración con productora
+      </button>
     </div>
 
+    <p class="galeria-resumen" id="galeria-resumen">
+      Cargando fotografías...
+    </p>
 
-    <div class="footer-abajo">
-      © 2026 Mandi Eventos · Todos los derechos reservados
+    <div class="galeria-grid" id="galeria-grid"></div>
+
+    <div class="galeria-vacia" id="galeria-vacia">
+      No encontramos fotografías que coincidan con tu búsqueda.
     </div>
 
-  </footer>
+    <section class="galeria-contacto">
+      <h2>¿Quieres entretención para tu evento?</h2>
+      <p>
+        Cuéntanos qué estás organizando y te ayudaremos a encontrar
+        las alternativas ideales para tu actividad.
+      </p>
+      <a href="https://wa.me/56935167953" target="_blank" rel="noopener">
+        💬 Cotizar por WhatsApp
+      </a>
+    </section>
+  </section>
+</main>
 
+<footer>
+  <div class="footer-contenido">
+    <div>
+      <h3>Mandi Eventos</h3>
+      <p>
+        Juegos, entretención y experiencias para hacer de cada
+        celebración un momento inolvidable.
+      </p>
+    </div>
 
-  <script src="carrito.js"></script>
+    <div>
+      <h3>Juegos</h3>
+      <p><a href="inflables.html">Inflables</a></p>
+      <p><a href="mecanicos.html">Mecánicos</a></p>
+      <p><a href="electronicos.html">Electrónicos</a></p>
+      <p><a href="juegos-de-agua.html">Juegos de agua</a></p>
+    </div>
+
+    <div>
+      <h3>Contacto</h3>
+      <p>¿Quieres cotizar tu evento?</p>
+      <p><a href="contacto.html">Contáctanos →</a></p>
+    </div>
+  </div>
+
+  <div class="footer-abajo">
+    © 2026 Mandi Eventos · Todos los derechos reservados
+  </div>
+</footer>
+
+<div
+  class="galeria-modal"
+  id="galeria-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Fotografía ampliada"
+>
+  <button class="galeria-cerrar" id="galeria-cerrar" aria-label="Cerrar">
+    ×
+  </button>
+  <img id="galeria-modal-img" src="" alt="">
+  <div class="galeria-modal-texto" id="galeria-modal-texto"></div>
+</div>
+
+<script src="carrito.js"></script>
+
+<script>
+const fotografias = [
+  "evento-colaboracion-mostazal.jpg",
+  "evento-colaboracion-mostazal2.jpg",
+  "evento-propio-municipalidad-el-quisco.jpg",
+  "evento-propio-muni-cerro-navia.jpg",
+  "colaborativo-muni-peñaflor.jpg",
+  "propio-cerro-navia3.jpg",
+  "propio-cerro-navia2.jpg",
+  "propio-cerro-navia.jpg",
+  "colaborativo-muni-quilicura.jpg",
+  "colaborativo-quilicura-muni.jpg",
+  "propio-fast-fest.jpg",
+  "colaborativo-muni-pudahuel.jpg",
+  "colaborativo-inacap.jpg",
+  "colaborativo-verano-en-tu-barrio-muni-san-joaquin.jpg",
+  "propio-muni-quinta-normal.jpg",
+  "colaborativo-muni-santo-domingo.jpg",
+  "colaborativo2.jpg",
+  "colaborativo1.jpg",
+  "colaborativo-muni-santo-domingo-2.jpg",
+  "colaborativo-muni-sto-domingo.jpg",
+  "colaborativo-verano-en-tu-barrio-muni-san-joaquin2.jpg",
+  "colaborativo3.jpg",
+  "colaborativo4.jpg",
+  "colaborativo5.jpg",
+  "colaborativo-nba-store.jpg",
+  "colaborativo-san-fco-mostazal-muni.jpg",
+  "colaborativo-muni-pudahuel2.jpg",
+  "colaborativo-muni-independencia.jpg",
+  "colaborativo-inacap2.jpg",
+  "colaborativo-muni-pudahuel3.jpg",
+  "propio-muni-cerro-navia.jpg",
+  "colaborativo-muni-independencia3.jpg",
+  "colaborativo-muni-lo-prado.jpg",
+  "colaborativo-muni-lo-prado3.jpg",
+  "colaborativo-bubble-gummers.jpg",
+  "colaborativo-nba-store-.jpg",
+  "colaborativo-verano-en-tu-barrio-muni-san-joaquin5.jpg",
+  "colaborativo-muni-santo-domingo2.jpg",
+  "colaborativo-vina-san-pedro3.jpg",
+  "colaborativo-vina-san-pedro.jpg",
+  "colaborativo-muni-la-cisterna3.jpg",
+  "colaborativo-muni-lo-espejo.jpg",
+  "colaborativo-muni-colina.jpg",
+  "propio-muni-quintanormal3.jpg",
+  "propio-muni-quintanormal2.jpg",
+  "propio-muni-quintanormal.jpg",
+  "colaborativo-muni-pudahuel4.jpg",
+  "colaborativo-muni-huechuraba.jpg",
+  "colaborativo-verano-en-tu-barrio-muni-san-joaquin3.jpg",
+  "colaborativo-muni-la-cisterna2.jpg",
+  "colaborativo-muni-la-cisterna.jpg",
+  "propio-fast-fest3.jpg",
+  "propio-colegio.jpg",
+  "colaborativo-muni-quilicura4.jpg",
+  "propio-muni-cerro-navia3.jpg",
+  "propio-fastfest.jpg",
+  "colaborativo-muni-pedro-aguirre-cerda.jpg",
+  "colaborativo-muni-pudahuel-festival-emergente.jpg",
+  "colaborativo-muni-pedro-aguirre-cerda-piscinas.jpg",
+  "propio-truck-fest.jpg",
+  "propio-muni-cerronavia.jpg",
+  "colaborativo-verano-en-tu-barrio-muni-san-joaquin4.jpg",
+  "propio-fastfest4.jpg"
+];
+
+function obtenerDatos(nombreArchivo) {
+  const nombre = nombreArchivo
+    .replace(/\.(jpg|jpeg|png|webp)$/i, "")
+    .replace(/[-_]+/g, " ");
+
+  const colaboracion =
+    nombreArchivo.toLowerCase().includes("colaborativo") ||
+    nombreArchivo.toLowerCase().includes("colaboracion");
+
+  const propio =
+    nombreArchivo.toLowerCase().includes("propio") ||
+    nombreArchivo.toLowerCase().includes("evento propio");
+
+  let tipo = colaboracion ? "colaboracion" : "propio";
+
+  const lugares = [
+    ["san joaquin", "San Joaquín"],
+    ["pedro aguirre cerda", "Pedro Aguirre Cerda"],
+    ["san fco mostazal", "San Francisco de Mostazal"],
+    ["mostazal", "Mostazal"],
+    ["quinta normal", "Quinta Normal"],
+    ["quintanormal", "Quinta Normal"],
+    ["cerro navia", "Cerro Navia"],
+    ["cerronavia", "Cerro Navia"],
+    ["pudahuel", "Pudahuel"],
+    ["el quisco", "El Quisco"],
+    ["peñaflor", "Peñaflor"],
+    ["quilicura", "Quilicura"],
+    ["santo domingo", "Santo Domingo"],
+    ["sto domingo", "Santo Domingo"],
+    ["independencia", "Independencia"],
+    ["lo prado", "Lo Prado"],
+    ["la cisterna", "La Cisterna"],
+    ["lo espejo", "Lo Espejo"],
+    ["huechuraba", "Huechuraba"],
+    ["colina", "Colina"],
+    ["vina san pedro", "Viña San Pedro"],
+    ["viña san pedro", "Viña San Pedro"],
+    ["inacap", "INACAP"],
+    ["nba store", "NBA Store"],
+    ["bubble gummers", "Bubble Gummers"]
+  ];
+
+  let lugar = "";
+
+  for (const [clave, valor] of lugares) {
+    if (nombre.includes(clave)) {
+      lugar = valor;
+      break;
+    }
+  }
+
+  let titulo = nombre
+    .replace(/\bpropio\b/g, "")
+    .replace(/\bcolaborativo\b/g, "")
+    .replace(/\bcolaboracion\b/g, "")
+    .replace(/\bevento\b/g, "")
+    .replace(/\bmuni\b/g, "")
+    .replace(/\bmunicipalidad\b/g, "")
+    .replace(/\bverano en tu barrio\b/g, "Verano en tu Barrio")
+    .replace(/\bfast fest\b/g, "Fast Fest")
+    .replace(/\bfastfest\b/g, "Fast Fest")
+    .replace(/\btruck fest\b/g, "Truck Fest")
+    .replace(/\bmostazal\b/g, "Mostazal")
+    .replace(/\bcerro navia\b/g, "Cerro Navia")
+    .replace(/\bpudahuel\b/g, "Pudahuel")
+    .replace(/\bquinta normal\b/g, "Quinta Normal")
+    .replace(/\bquintanormal\b/g, "Quinta Normal")
+    .replace(/\bsan joaquin\b/g, "San Joaquín")
+    .replace(/\bpedro aguirre cerda\b/g, "Pedro Aguirre Cerda")
+    .replace(/\bel quisco\b/g, "El Quisco")
+    .replace(/\bpeñaflor\b/g, "Peñaflor")
+    .replace(/\bquilicura\b/g, "Quilicura")
+    .replace(/\bsanto domingo\b/g, "Santo Domingo")
+    .replace(/\bsto domingo\b/g, "Santo Domingo")
+    .replace(/\bindependencia\b/g, "Independencia")
+    .replace(/\blo prado\b/g, "Lo Prado")
+    .replace(/\bla cisterna\b/g, "La Cisterna")
+    .replace(/\blo espejo\b/g, "Lo Espejo")
+    .replace(/\bhuechuraba\b/g, "Huechuraba")
+    .replace(/\bcolina\b/g, "Colina")
+    .replace(/\binacap\b/g, "INACAP")
+    .replace(/\bnba store\b/g, "NBA Store")
+    .replace(/\bbubble gummers\b/g, "Bubble Gummers")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (!titulo || /^\d+$/.test(titulo)) {
+    titulo = lugar ? "Evento en " + lugar : "Evento Mandi Eventos";
+  }
+
+  if (/fast fest/i.test(nombre)) titulo = "Fast Fest";
+  if (/truck fest/i.test(nombre)) titulo = "Truck Fest";
+  if (/verano en tu barrio/i.test(nombre)) titulo = "Verano en tu Barrio";
+  if (/festival emergente/i.test(nombre)) titulo = "Festival Emergente";
+  if (/colegio/i.test(nombre)) titulo = "Evento en colegio";
+  if (/nba store/i.test(nombre)) titulo = "Actividad en NBA Store";
+  if (/bubble gummers/i.test(nombre)) titulo = "Actividad en Bubble Gummers";
+  if (/inacap/i.test(nombre)) titulo = "Actividad en INACAP";
+
+  let descripcion;
+
+  if (tipo === "colaboracion") {
+    descripcion = "Participación con juegos y entretención infantil en colaboración con una productora.";
+  } else {
+    descripcion = "Participación de Mandi Eventos en el área infantil y de entretención.";
+  }
+
+  if (lugar && !/fast fest|truck fest/i.test(nombre)) {
+    descripcion = tipo === "colaboracion"
+      ? "Juegos y entretención infantil en colaboración con una productora en " + lugar + "."
+      : "Área infantil y entretención a cargo de Mandi Eventos en " + lugar + ".";
+  }
+
+  if (/festival emergente/i.test(nombre)) {
+    lugar = "Pudahuel";
+    titulo = "Festival Emergente de Pudahuel";
+    descripcion = "Participación con juegos y entretención infantil en colaboración con una productora.";
+  }
+
+  return {
+    titulo,
+    lugar,
+    tipo,
+    descripcion,
+    propio
+  };
+}
+
+const galeriaGrid = document.getElementById("galeria-grid");
+const galeriaBusqueda = document.getElementById("galeria-busqueda");
+const galeriaResumen = document.getElementById("galeria-resumen");
+const galeriaVacia = document.getElementById("galeria-vacia");
+
+let filtroActual = "todos";
+
+function crearGaleria() {
+  fotografias.forEach((archivo, indice) => {
+    const datos = obtenerDatos(archivo);
+    const tarjeta = document.createElement("article");
+
+    tarjeta.className = "galeria-tarjeta";
+    tarjeta.dataset.tipo = datos.tipo;
+    tarjeta.dataset.busqueda = (
+      archivo + " " + datos.titulo + " " + datos.lugar + " " + datos.descripcion
+    ).toLowerCase();
+
+    const botonFoto = document.createElement("button");
+    botonFoto.type = "button";
+    botonFoto.className = "galeria-foto";
+    botonFoto.setAttribute("aria-label", "Ampliar fotografía: " + datos.titulo);
+
+    const imagen = document.createElement("img");
+    imagen.src = "img/" + archivo;
+    imagen.alt = datos.titulo + (datos.lugar ? " - " + datos.lugar : "");
+    imagen.loading = "lazy";
+
+    imagen.addEventListener("error", () => {
+      tarjeta.style.display = "none";
+      tarjeta.dataset.error = "true";
+      actualizarGaleria();
+    });
+
+    botonFoto.appendChild(imagen);
+    botonFoto.addEventListener("click", () => abrirModal(
+      imagen.src,
+      datos.titulo,
+      datos.lugar,
+      datos.tipo
+    ));
+
+    const info = document.createElement("div");
+    info.className = "galeria-info";
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = datos.titulo;
+
+    const badges = document.createElement("div");
+    badges.className = "galeria-badges";
+
+    const badgeTipo = document.createElement("span");
+    badgeTipo.className = "galeria-badge " +
+      (datos.tipo === "propio" ? "propio" : "colaboracion");
+    badgeTipo.textContent = datos.tipo === "propio"
+      ? "Producción propia"
+      : "Colaboración con productora";
+
+    badges.appendChild(badgeTipo);
+
+    const lugar = document.createElement("p");
+    lugar.className = "galeria-lugar";
+    lugar.textContent = datos.lugar ? "📍 " + datos.lugar : "";
+
+    const descripcion = document.createElement("p");
+    descripcion.className = "galeria-descripcion";
+    descripcion.textContent = datos.descripcion;
+
+    info.append(titulo, badges, lugar, descripcion);
+    tarjeta.append(botonFoto, info);
+    galeriaGrid.appendChild(tarjeta);
+  });
+
+  actualizarGaleria();
+}
+
+function actualizarGaleria() {
+  const busqueda = galeriaBusqueda.value.trim().toLowerCase();
+  let visibles = 0;
+
+  document.querySelectorAll(".galeria-tarjeta").forEach(tarjeta => {
+    if (tarjeta.dataset.error === "true") {
+      tarjeta.style.display = "none";
+      return;
+    }
+
+    const coincideFiltro =
+      filtroActual === "todos" || tarjeta.dataset.tipo === filtroActual;
+
+    const coincideTexto = tarjeta.dataset.busqueda.includes(busqueda);
+    const mostrar = coincideFiltro && coincideTexto;
+
+    tarjeta.style.display = mostrar ? "" : "none";
+    if (mostrar) visibles++;
+  });
+
+  galeriaResumen.textContent =
+    visibles + (visibles === 1 ? " fotografía visible" : " fotografías visibles");
+
+  galeriaVacia.style.display = visibles === 0 ? "block" : "none";
+}
+
+document.querySelectorAll(".galeria-filtro").forEach(boton => {
+  boton.addEventListener("click", () => {
+    filtroActual = boton.dataset.filtro;
+
+    document.querySelectorAll(".galeria-filtro").forEach(item => {
+      item.classList.toggle("activo", item === boton);
+    });
+
+    actualizarGaleria();
+  });
+});
+
+galeriaBusqueda.addEventListener("input", actualizarGaleria);
+
+const modal = document.getElementById("galeria-modal");
+const modalImagen = document.getElementById("galeria-modal-img");
+const modalTexto = document.getElementById("galeria-modal-texto");
+
+function abrirModal(src, titulo, lugar, tipo) {
+  modalImagen.src = src;
+  modalImagen.alt = titulo;
+  modalTexto.textContent = titulo +
+    (lugar ? " · " + lugar : "") +
+    (tipo === "propio"
+      ? " · Producción propia"
+      : " · Colaboración con productora");
+
+  modal.classList.add("abierto");
+  document.body.style.overflow = "hidden";
+}
+
+function cerrarModal() {
+  modal.classList.remove("abierto");
+  modalImagen.src = "";
+  document.body.style.overflow = "";
+}
+
+document.getElementById("galeria-cerrar").addEventListener("click", cerrarModal);
+
+modal.addEventListener("click", evento => {
+  if (evento.target === modal) cerrarModal();
+});
+
+document.addEventListener("keydown", evento => {
+  if (evento.key === "Escape") cerrarModal();
+});
+
+crearGaleria();
+</script>
 
 </body>
-
 </html>
