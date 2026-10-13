@@ -1006,3 +1006,27 @@ section.categorias#juegos .categorias-grid > a.categoria p {
     flex-basis: 170px !important;
   }
 }
+
+/* =========================
+   IMÁGENES DE BOTONES DE CATEGORÍAS
+========================= */
+
+.categoria-foto {
+  display: block;
+  width: 100%;
+  height: 160px;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  margin: 0 auto 15px;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 700px) {
+  .categoria-foto {
+    height: 115px;
+    margin-bottom: 12px;
+  }
+}
+
