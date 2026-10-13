@@ -948,3 +948,61 @@ footer a {
     margin: 0 8px 14px;
   }
 }
+
+  
+/* CORRECCIÓN FINAL DE LAS 10 TARJETAS */
+
+section.categorias#juegos .categorias-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin: 25px auto !important;
+}
+
+section.categorias#juegos .categorias-grid > a.categoria {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+section.categorias#juegos .categorias-grid > a.categoria > img.categoria-foto {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 125px !important;
+  min-height: 125px !important;
+  max-height: 125px !important;
+  flex: 0 0 125px !important;
+  object-fit: cover !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+section.categorias#juegos .categorias-grid > a.categoria h3 {
+  margin: 12px 8px 6px !important;
+  font-size: 14px !important;
+}
+
+section.categorias#juegos .categorias-grid > a.categoria p {
+  margin: 0 8px 14px !important;
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+}
+
+@media (min-width: 601px) {
+  section.categorias#juegos .categorias-grid > a.categoria > img.categoria-foto {
+    height: 170px !important;
+    min-height: 170px !important;
+    max-height: 170px !important;
+    flex-basis: 170px !important;
+  }
+}
