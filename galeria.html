@@ -517,33 +517,33 @@ const fotografias = [
   "propio-fastfest4.jpg"
 ];
 
+
+
 function obtenerDatos(nombreArchivo) {
   const nombre = nombreArchivo
     .replace(/\.(jpg|jpeg|png|webp)$/i, "")
-    .replace(/[-_]+/g, " ");
+    .replace(/[-_]+/g, " ")
+    .trim();
 
+  const archivo = nombreArchivo.toLowerCase();
   const colaboracion =
-    nombreArchivo.toLowerCase().includes("colaborativo") ||
-    nombreArchivo.toLowerCase().includes("colaboracion");
+    archivo.includes("colaborativo") ||
+    archivo.includes("colaboracion");
 
-  const propio =
-    nombreArchivo.toLowerCase().includes("propio") ||
-    nombreArchivo.toLowerCase().includes("evento propio");
-
-  let tipo = colaboracion ? "colaboracion" : "propio";
+  const tipo = colaboracion ? "colaboracion" : "propio";
 
   const lugares = [
     ["san joaquin", "San Joaquín"],
     ["pedro aguirre cerda", "Pedro Aguirre Cerda"],
     ["san fco mostazal", "San Francisco de Mostazal"],
-    ["mostazal", "Mostazal"],
+    ["mostazal", "San Francisco de Mostazal"],
     ["quinta normal", "Quinta Normal"],
     ["quintanormal", "Quinta Normal"],
     ["cerro navia", "Cerro Navia"],
     ["cerronavia", "Cerro Navia"],
     ["pudahuel", "Pudahuel"],
     ["el quisco", "El Quisco"],
-    ["peñaflor", "Peñaflor"],
+    ["penaflor", "Peñaflor"],
     ["quilicura", "Quilicura"],
     ["santo domingo", "Santo Domingo"],
     ["sto domingo", "Santo Domingo"],
@@ -563,78 +563,91 @@ function obtenerDatos(nombreArchivo) {
   let lugar = "";
 
   for (const [clave, valor] of lugares) {
-    if (nombre.includes(clave)) {
+    if (archivo.includes(clave)) {
       lugar = valor;
       break;
     }
   }
 
   let titulo = nombre
-    .replace(/\bpropio\b/g, "")
-    .replace(/\bcolaborativo\b/g, "")
-    .replace(/\bcolaboracion\b/g, "")
-    .replace(/\bevento\b/g, "")
-    .replace(/\bmuni\b/g, "")
-    .replace(/\bmunicipalidad\b/g, "")
-    .replace(/\bverano en tu barrio\b/g, "Verano en tu Barrio")
-    .replace(/\bfast fest\b/g, "Fast Fest")
-    .replace(/\bfastfest\b/g, "Fast Fest")
-    .replace(/\btruck fest\b/g, "Truck Fest")
-    .replace(/\bmostazal\b/g, "Mostazal")
-    .replace(/\bcerro navia\b/g, "Cerro Navia")
-    .replace(/\bpudahuel\b/g, "Pudahuel")
-    .replace(/\bquinta normal\b/g, "Quinta Normal")
-    .replace(/\bquintanormal\b/g, "Quinta Normal")
-    .replace(/\bsan joaquin\b/g, "San Joaquín")
-    .replace(/\bpedro aguirre cerda\b/g, "Pedro Aguirre Cerda")
-    .replace(/\bel quisco\b/g, "El Quisco")
-    .replace(/\bpeñaflor\b/g, "Peñaflor")
-    .replace(/\bquilicura\b/g, "Quilicura")
-    .replace(/\bsanto domingo\b/g, "Santo Domingo")
-    .replace(/\bsto domingo\b/g, "Santo Domingo")
-    .replace(/\bindependencia\b/g, "Independencia")
-    .replace(/\blo prado\b/g, "Lo Prado")
-    .replace(/\bla cisterna\b/g, "La Cisterna")
-    .replace(/\blo espejo\b/g, "Lo Espejo")
-    .replace(/\bhuechuraba\b/g, "Huechuraba")
-    .replace(/\bcolina\b/g, "Colina")
-    .replace(/\binacap\b/g, "INACAP")
-    .replace(/\bnba store\b/g, "NBA Store")
-    .replace(/\bbubble gummers\b/g, "Bubble Gummers")
+    .replace(/^propio[-_]?/i, "")
+    .replace(/^colaborativo[-_]?/i, "")
+    .replace(/^colaboracion[-_]?/i, "")
+    .replace(/^evento[-_]?/i, "")
+    .replace(/^muni[-_]?/i, "")
+    .replace(/^municipalidad[-_]?/i, "")
+    .replace(/verano en tu barrio/gi, "Verano en tu Barrio")
+    .replace(/fast fest/gi, "Fast Fest")
+    .replace(/fastfest/gi, "Fast Fest")
+    .replace(/truck fest/gi, "Truck Fest")
+    .replace(/mostazal/gi, "San Francisco de Mostazal")
+    .replace(/cerro navia/gi, "Cerro Navia")
+    .replace(/cerronavia/gi, "Cerro Navia")
+    .replace(/pudahuel/gi, "Pudahuel")
+    .replace(/quinta normal/gi, "Quinta Normal")
+    .replace(/quintanormal/gi, "Quinta Normal")
+    .replace(/santo domingo/gi, "Santo Domingo")
+    .replace(/sto domingo/gi, "Santo Domingo")
+    .replace(/muni/gi, "")
+    .replace(/[-_]+/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 
-  if (!titulo || /^\d+$/.test(titulo)) {
-    titulo = lugar ? "Evento en " + lugar : "Evento Mandi Eventos";
+  // Títulos especiales
+  if (/fast fest/i.test(nombre)) {
+    titulo = "Fast Fest";
+  } else if (/truck fest/i.test(nombre)) {
+    titulo = "Truck Fest";
+  } else if (/festival emergente/i.test(nombre)) {
+    titulo = "Festival Emergente de Pudahuel";
+    lugar = "Pudahuel";
+  } else if (/verano en tu barrio/i.test(nombre)) {
+    titulo = "Verano en tu Barrio";
+  } else if (/evento propio municipalidad el quisco/i.test(nombre)) {
+    titulo = "Municipalidad de El Quisco";
+    lugar = "El Quisco";
+  } else if (/evento propio muni cerro navia|propio cerro navia|propio muni cerro navia/i.test(nombre)) {
+    titulo = "Municipalidad de Cerro Navia";
+    lugar = "Cerro Navia";
+  } else if (/mostazal/i.test(nombre)) {
+    titulo = "Municipalidad de San Francisco de Mostazal";
+    lugar = "San Francisco de Mostazal";
+  } else if (/santo domingo/i.test(nombre)) {
+    titulo = "Municipalidad de Santo Domingo";
+    lugar = "Santo Domingo";
+  } else if (/quinta normal/i.test(nombre)) {
+    titulo = "Municipalidad de Quinta Normal";
+    lugar = "Quinta Normal";
+  } else if (/colaborativo[1-5]\.jpg$/i.test(nombreArchivo)) {
+    titulo = "Experiencias en eventos";
+  } else if (/colegio/i.test(nombre)) {
+    titulo = "Evento en colegio";
+  } else if (/bubble gummers/i.test(nombre)) {
+    titulo = "Actividad en Bubble Gummers";
+  } else if (/nba store/i.test(nombre)) {
+    titulo = "Actividad en NBA Store";
+  } else if (/inacap/i.test(nombre)) {
+    titulo = "Actividad en INACAP";
+  } else if (lugar) {
+    titulo = colaboracion
+      ? "Evento en " + lugar
+      : "Municipalidad de " + lugar;
+  } else if (!titulo || /^\d+$/.test(titulo)) {
+    titulo = "Experiencias en eventos";
   }
 
-  if (/fast fest/i.test(nombre)) titulo = "Fast Fest";
-  if (/truck fest/i.test(nombre)) titulo = "Truck Fest";
-  if (/verano en tu barrio/i.test(nombre)) titulo = "Verano en tu Barrio";
-  if (/festival emergente/i.test(nombre)) titulo = "Festival Emergente";
-  if (/colegio/i.test(nombre)) titulo = "Evento en colegio";
-  if (/nba store/i.test(nombre)) titulo = "Actividad en NBA Store";
-  if (/bubble gummers/i.test(nombre)) titulo = "Actividad en Bubble Gummers";
-  if (/inacap/i.test(nombre)) titulo = "Actividad en INACAP";
+  let descripcion = colaboracion
+    ? "Participación con juegos y entretención infantil en colaboración con una productora."
+    : "Participación de Mandi Eventos en el área infantil y de entretención.";
 
-  let descripcion;
-
-  if (tipo === "colaboracion") {
-    descripcion = "Participación con juegos y entretención infantil en colaboración con una productora.";
-  } else {
-    descripcion = "Participación de Mandi Eventos en el área infantil y de entretención.";
-  }
-
-  if (lugar && !/fast fest|truck fest/i.test(nombre)) {
-    descripcion = tipo === "colaboracion"
-      ? "Juegos y entretención infantil en colaboración con una productora en " + lugar + "."
-      : "Área infantil y entretención a cargo de Mandi Eventos en " + lugar + ".";
+  if (/fast fest|truck fest/i.test(nombre)) {
+    descripcion =
+      "Juegos y entretención para el área infantil del evento.";
   }
 
   if (/festival emergente/i.test(nombre)) {
-    lugar = "Pudahuel";
-    titulo = "Festival Emergente de Pudahuel";
-    descripcion = "Participación con juegos y entretención infantil en colaboración con una productora.";
+    descripcion =
+      "Participación con juegos y entretención infantil en colaboración con una productora.";
   }
 
   return {
@@ -642,10 +655,9 @@ function obtenerDatos(nombreArchivo) {
     lugar,
     tipo,
     descripcion,
-    propio
+    propio: !colaboracion
   };
 }
-
 const galeriaGrid = document.getElementById("galeria-grid");
 const galeriaBusqueda = document.getElementById("galeria-busqueda");
 const galeriaResumen = document.getElementById("galeria-resumen");
