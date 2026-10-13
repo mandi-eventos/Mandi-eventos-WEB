@@ -829,59 +829,87 @@ footer a {
   border-radius: 50%;
   background: white;
   color: #222;
-/* TARJETAS DE CATEGORÍAS CON FOTOGRAFÍAS */
 
-.categorias-grid .categoria {
-  padding: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border-radius: 18px;
-  background: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+
+/* CATEGORÍAS MANDI EVENTOS */
+
+.categorias .categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 30px auto;
+  align-items: stretch;
 }
 
-.categorias-grid .categoria:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(55, 20, 85, 0.18);
+.categorias-grid a.categoria {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid #eee7f3;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(53, 20, 81, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.categorias-grid a.categoria:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(53, 20, 81, 0.12);
 }
 
 .categorias-grid .categoria-foto {
   display: block;
   width: 100%;
-  height: 185px;
+  height: 170px;
+  max-width: none;
   object-fit: cover;
-  object-position: center;
+  margin: 0;
+  border-radius: 0;
 }
 
-.categorias-grid .categoria h3 {
+.categorias-grid a.categoria h3 {
+  margin: 15px 10px 6px;
   color: #351451;
-  margin: 16px 12px 6px;
+  font-size: 17px;
 }
 
-.categorias-grid .categoria p {
+.categorias-grid a.categoria p {
+  margin: 0 12px 18px;
   color: #777;
-  margin: 0 14px 20px;
+  font-size: 13px;
   line-height: 1.5;
 }
 
 @media (max-width: 600px) {
+  .categorias .categorias-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .categorias-grid .categoria-foto {
-    height: 135px;
+    height: 125px;
   }
 
-  .categorias-grid .categoria h3 {
-    font-size: 15px;
+  .categorias-grid a.categoria h3 {
+    font-size: 14px;
+    margin-top: 12px;
   }
 
-  .categorias-grid .categoria p {
-    font-size: 12px;
+  .categorias-grid a.categoria p {
+    font-size: 11px;
+    margin: 0 8px 14px;
   }
 }
-  font-size: 32px;
-  line-height: 1;
-  cursor: pointer;
-  z-index: 10000;
-}
-
