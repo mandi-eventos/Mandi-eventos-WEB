@@ -593,28 +593,62 @@ function obtenerDatos(nombreArchivo) {
     .replace(/\s+/g, " ")
     .trim();
 
+
   // Títulos especiales
   if (/fast fest/i.test(nombre)) {
     titulo = "Fast Fest";
   } else if (/truck fest/i.test(nombre)) {
     titulo = "Truck Fest";
   } else if (/festival emergente/i.test(nombre)) {
-    titulo = "Festival Emergente de Pudahuel";
+    titulo = "Municipalidad de Pudahuel";
     lugar = "Pudahuel";
   } else if (/verano en tu barrio/i.test(nombre)) {
     titulo = "Verano en tu Barrio";
   } else if (/evento propio municipalidad el quisco/i.test(nombre)) {
     titulo = "Municipalidad de El Quisco";
     lugar = "El Quisco";
-  } else if (/evento propio muni cerro navia|propio cerro navia|propio muni cerro navia/i.test(nombre)) {
+  } else if (/cerro navia/i.test(nombre)) {
     titulo = "Municipalidad de Cerro Navia";
     lugar = "Cerro Navia";
   } else if (/mostazal/i.test(nombre)) {
     titulo = "Municipalidad de San Francisco de Mostazal";
     lugar = "San Francisco de Mostazal";
-  } else if (/santo domingo/i.test(nombre)) {
+  } else if (/pudahuel/i.test(nombre)) {
+    titulo = "Municipalidad de Pudahuel";
+    lugar = "Pudahuel";
+  } else if (/independencia/i.test(nombre)) {
+    titulo = "Municipalidad de Independencia";
+    lugar = "Independencia";
+  } else if (/penaflor/i.test(nombre)) {
+    titulo = "Municipalidad de Peñaflor";
+    lugar = "Peñaflor";
+  } else if (/quilicura/i.test(nombre)) {
+    titulo = "Municipalidad de Quilicura";
+    lugar = "Quilicura";
+  } else if (/santo domingo|sto domingo/i.test(nombre)) {
     titulo = "Municipalidad de Santo Domingo";
     lugar = "Santo Domingo";
+  } else if (/lo prado/i.test(nombre)) {
+    titulo = "Municipalidad de Lo Prado";
+    lugar = "Lo Prado";
+  } else if (/vina san pedro|viña san pedro/i.test(nombre)) {
+    titulo = "Viña San Pedro";
+    lugar = "Viña San Pedro";
+  } else if (/la cisterna/i.test(nombre)) {
+    titulo = "Municipalidad de La Cisterna";
+    lugar = "La Cisterna";
+  } else if (/lo espejo/i.test(nombre)) {
+    titulo = "Municipalidad de Lo Espejo";
+    lugar = "Lo Espejo";
+  } else if (/colina/i.test(nombre)) {
+    titulo = "Municipalidad de Colina";
+    lugar = "Colina";
+  } else if (/huechuraba/i.test(nombre)) {
+    titulo = "Municipalidad de Huechuraba";
+    lugar = "Huechuraba";
+  } else if (/pedro aguirre cerda/i.test(nombre)) {
+    titulo = "Municipalidad de Pedro Aguirre Cerda";
+    lugar = "Pedro Aguirre Cerda";
   } else if (/quinta normal/i.test(nombre)) {
     titulo = "Municipalidad de Quinta Normal";
     lugar = "Quinta Normal";
@@ -635,7 +669,7 @@ function obtenerDatos(nombreArchivo) {
   } else if (!titulo || /^\d+$/.test(titulo)) {
     titulo = "Experiencias en eventos";
   }
-
+  
   let descripcion = colaboracion
     ? "Participación con juegos y entretención infantil en colaboración con una productora."
     : "Participación de Mandi Eventos en el área infantil y de entretención.";
