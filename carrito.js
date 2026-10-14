@@ -18,25 +18,37 @@ function actualizarContador() {
 }
 
 // Busca la imagen del juego en la tarjeta de la categoría.
+
 function obtenerImagenProducto(nombre) {
+  const normalizar = texto =>
+    texto
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[×✕]/g, "x")
+      .replace(/\s+/g, "")
+      .replace(/[^a-z0-9]/g, "");
+
+  const nombreBuscado = normalizar(nombre);
   const tarjetas = document.querySelectorAll(".producto");
 
   for (const tarjeta of tarjetas) {
     const titulo = tarjeta.querySelector("h3");
     const imagen = tarjeta.querySelector("img.producto-imagen");
 
-    if (
-      titulo &&
-      imagen &&
-      titulo.textContent.trim() === nombre &&
-      imagen.getAttribute("src")
-    ) {
+    if (!titulo || !imagen || !imagen.getAttribute("src")) {
+      continue;
+    }
+
+    if (normalizar(titulo.textContent) === nombreBuscado) {
       return imagen.getAttribute("src");
     }
   }
 
   return "";
 }
+
+
 
 function agregarAlCarrito(nombre, precio = 0, imagen = "") {
   // Si no se indicó la imagen, la busca automáticamente.
