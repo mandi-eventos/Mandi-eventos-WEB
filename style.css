@@ -1044,3 +1044,80 @@ section.categorias#juegos .categorias-grid > a.categoria p {
   }
 }
 
+/* AJUSTE DEL CARRITO PARA CELULARES */
+#lista-carrito,
+.item-carrito,
+.item-carrito-info,
+.carrito-contenedor,
+#carrito-contenido {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+}
+
+#lista-carrito {
+  width: 100%;
+}
+
+.item-carrito {
+  width: 100%;
+  overflow: hidden;
+}
+
+.item-carrito-info {
+  overflow-wrap: anywhere;
+}
+
+.item-carrito-icono {
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+  max-width: 55px;
+  flex: 0 0 55px;
+  overflow: hidden;
+}
+
+.item-carrito-icono img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .carrito-contenedor {
+    padding: 15px 10px 50px;
+  }
+
+  .item-carrito {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .item-carrito-info {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
+
+  .item-carrito h3 {
+    font-size: 15px;
+    overflow-wrap: anywhere;
+  }
+
+  .cantidad-carrito {
+    gap: 8px;
+  }
+
+  .subtotal-carrito {
+    min-width: 0;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+  }
+
+  .resumen-carrito {
+    padding: 18px 12px;
+  }
+}
