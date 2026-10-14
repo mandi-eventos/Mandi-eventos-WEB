@@ -500,6 +500,20 @@ footer a {
   font-size: 25px;
 }
 
+.item-carrito-icono {
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.item-carrito-icono img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 3px;
+  border-radius: 14px;
+}
+
 .item-carrito h3 {
   color: var(--morado);
   margin-bottom: 3px;
