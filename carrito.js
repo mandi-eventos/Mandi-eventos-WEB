@@ -311,7 +311,7 @@ function solicitarCotizacion() {
     "TOTAL DE JUEGOS: $" +
     totalGeneral.toLocaleString("es-CL") +
     "\n\n" +
-    "Quisiera conocer disponibilidad y valor para mi evento. 😊";
+    "Quisiera conocer disponibilidad de estos juegos y coordinar la reserva. 😊";
 
   const telefono = "56935167953";
 
