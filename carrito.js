@@ -1,93 +1,104 @@
+
 let carrito = JSON.parse(localStorage.getItem("mandiCarrito")) || [];
 
-
 function guardarCarrito() {
-  localStorage.setItem(
-    "mandiCarrito",
-    JSON.stringify(carrito)
-  );
+  localStorage.setItem("mandiCarrito", JSON.stringify(carrito));
 }
 
-
 function actualizarContador() {
-
   const contador = document.getElementById("contador-carrito");
-
   if (!contador) return;
 
   const cantidad = carrito.reduce(
-    (total, producto) => total + producto.cantidad,
+    (total, producto) => total + (Number(producto.cantidad) || 0),
     0
   );
 
   contador.textContent = cantidad;
 }
 
+// Busca la imagen del juego en la tarjeta de la categoría.
+function obtenerImagenProducto(nombre) {
+  const tarjetas = document.querySelectorAll(".producto");
 
-function agregarAlCarrito(nombre, precio = 0) {
+  for (const tarjeta of tarjetas) {
+    const titulo = tarjeta.querySelector("h3");
+    const imagen = tarjeta.querySelector("img.producto-imagen");
+
+    if (
+      titulo &&
+      imagen &&
+      titulo.textContent.trim() === nombre &&
+      imagen.getAttribute("src")
+    ) {
+      return imagen.getAttribute("src");
+    }
+  }
+
+  return "";
+}
+
+function agregarAlCarrito(nombre, precio = 0, imagen = "") {
+  // Si no se indicó la imagen, la busca automáticamente.
+  imagen = imagen || obtenerImagenProducto(nombre);
 
   const productoExistente = carrito.find(
     producto => producto.nombre === nombre
   );
 
-
   if (productoExistente) {
-
     productoExistente.cantidad++;
 
-  } else {
+    // Actualiza la foto de productos que ya estaban guardados.
+    if (imagen) {
+      productoExistente.imagen = imagen;
+    }
 
+    if (precio > 0) {
+      productoExistente.precio = precio;
+    }
+  } else {
     carrito.push({
       nombre: nombre,
-      precio: precio,
-      cantidad: 1
+      precio: Number(precio) || 0,
+      cantidad: 1,
+      imagen: imagen
     });
-
   }
-
 
   guardarCarrito();
   actualizarContador();
-
 
   mostrarToast(
     "¡Agregado al carrito!",
     nombre + " fue agregado a tu selección."
   );
-
 }
 
-
 function cambiarCantidad(indice, cambio) {
+  if (!carrito[indice]) return;
 
   carrito[indice].cantidad += cambio;
 
-
   if (carrito[indice].cantidad <= 0) {
-
     const nombre = carrito[indice].nombre;
-
     carrito.splice(indice, 1);
 
     mostrarToast(
       "Producto eliminado",
       nombre + " fue quitado de tu selección."
     );
-
   }
-
 
   guardarCarrito();
   mostrarCarrito();
   actualizarContador();
-
 }
 
-
 function eliminarProducto(indice) {
+  if (!carrito[indice]) return;
 
   const nombre = carrito[indice].nombre;
-
   carrito.splice(indice, 1);
 
   guardarCarrito();
@@ -99,184 +110,157 @@ function eliminarProducto(indice) {
 
   mostrarCarrito();
   actualizarContador();
-
 }
 
-
 function mostrarCarrito() {
-
   const lista = document.getElementById("lista-carrito");
   const vacio = document.getElementById("carrito-vacio");
   const contenido = document.getElementById("carrito-contenido");
 
-  if (!lista) return;
-
+  if (!lista || !vacio || !contenido) return;
 
   if (carrito.length === 0) {
-
     vacio.style.display = "block";
     contenido.style.display = "none";
-
     actualizarContador();
-
     return;
-
   }
-
 
   vacio.style.display = "none";
   contenido.style.display = "block";
-
   lista.innerHTML = "";
-
 
   let cantidadTotal = 0;
   let total = 0;
 
-
   carrito.forEach((producto, indice) => {
+    const cantidad = Number(producto.cantidad) || 1;
+    const precio = Number(producto.precio) || 0;
+    const subtotal = precio * cantidad;
 
-    cantidadTotal += producto.cantidad;
-    total += producto.precio * producto.cantidad;
-
+    cantidadTotal += cantidad;
+    total += subtotal;
 
     const item = document.createElement("div");
-
     item.className = "item-carrito";
 
+    const info = document.createElement("div");
+    info.className = "item-carrito-info";
 
-    const subtotal =
-      producto.precio * producto.cantidad;
+    const contenedorImagen = document.createElement("div");
+    contenedorImagen.className = "item-carrito-icono";
 
+    if (producto.imagen) {
+      const foto = document.createElement("img");
+      foto.src = producto.imagen;
+      foto.alt = producto.nombre;
+      foto.loading = "lazy";
 
-    item.innerHTML = `
+      foto.onerror = function () {
+        contenedorImagen.textContent = "🎮";
+      };
 
-      <div class="item-carrito-info">
+      contenedorImagen.appendChild(foto);
+    } else {
+      contenedorImagen.textContent = "🎮";
+    }
 
-        <div class="item-carrito-icono">
-          🎮
-        </div>
+    const datos = document.createElement("div");
 
-        <div>
+    const titulo = document.createElement("h3");
+    titulo.textContent = producto.nombre;
+    datos.appendChild(titulo);
 
-          <h3>${producto.nombre}</h3>
+    const precioTexto = document.createElement("p");
 
-          ${
-            producto.precio > 0
-            ? `<p>$${producto.precio.toLocaleString("es-CL")}</p>`
-            : `<p class="consultar">Precio a consultar</p>`
-          }
+    if (precio > 0) {
+      precioTexto.textContent =
+        "$" + precio.toLocaleString("es-CL");
+    } else {
+      precioTexto.textContent = "Precio a consultar";
+      precioTexto.className = "consultar";
+    }
 
-        </div>
+    datos.appendChild(precioTexto);
 
-      </div>
+    info.appendChild(contenedorImagen);
+    info.appendChild(datos);
+    item.appendChild(info);
 
+    const controles = document.createElement("div");
+    controles.className = "cantidad-carrito";
 
-      <div class="cantidad-carrito">
+    const menos = document.createElement("button");
+    menos.type = "button";
+    menos.textContent = "−";
+    menos.setAttribute("aria-label", "Restar unidad");
+    menos.addEventListener("click", () => cambiarCantidad(indice, -1));
 
-        <button
-          onclick="cambiarCantidad(${indice}, -1)"
-        >
-          −
-        </button>
+    const numero = document.createElement("strong");
+    numero.textContent = cantidad;
 
-        <strong>
-          ${producto.cantidad}
-        </strong>
+    const mas = document.createElement("button");
+    mas.type = "button";
+    mas.textContent = "+";
+    mas.setAttribute("aria-label", "Agregar unidad");
+    mas.addEventListener("click", () => cambiarCantidad(indice, 1));
 
-        <button
-          onclick="cambiarCantidad(${indice}, 1)"
-        >
-          +
-        </button>
+    controles.appendChild(menos);
+    controles.appendChild(numero);
+    controles.appendChild(mas);
+    item.appendChild(controles);
 
-      </div>
+    const subtotalElemento = document.createElement("div");
+    subtotalElemento.className = "subtotal-carrito";
+    subtotalElemento.textContent = precio > 0
+      ? "$" + subtotal.toLocaleString("es-CL")
+      : "Consultar";
 
+    item.appendChild(subtotalElemento);
 
-      <div class="subtotal-carrito">
+    const eliminar = document.createElement("button");
+    eliminar.type = "button";
+    eliminar.className = "eliminar-carrito";
+    eliminar.textContent = "🗑️";
+    eliminar.setAttribute("aria-label", "Eliminar " + producto.nombre);
+    eliminar.addEventListener("click", () => eliminarProducto(indice));
 
-        ${
-          producto.precio > 0
-          ? `$${subtotal.toLocaleString("es-CL")}`
-          : "Consultar"
-        }
-
-      </div>
-
-
-      <button
-        class="eliminar-carrito"
-        onclick="eliminarProducto(${indice})"
-        aria-label="Eliminar ${producto.nombre}"
-      >
-        🗑️
-      </button>
-
-    `;
-
-
+    item.appendChild(eliminar);
     lista.appendChild(item);
-
   });
 
+  const totalProductos = document.getElementById("total-productos");
+  const totalCarrito = document.getElementById("total-carrito");
 
-  document.getElementById(
-    "total-productos"
-  ).textContent = cantidadTotal;
+  if (totalProductos) totalProductos.textContent = cantidadTotal;
 
-
-  document.getElementById(
-    "total-carrito"
-  ).textContent =
-    total > 0
+  if (totalCarrito) {
+    totalCarrito.textContent = total > 0
       ? "$" + total.toLocaleString("es-CL")
       : "A consultar";
-
+  }
 }
 
-
 function mostrarToast(titulo, mensaje) {
-
   const toast = document.getElementById("toast");
-
   if (!toast) return;
 
+  const tituloElemento = document.getElementById("toast-titulo");
+  const mensajeElemento = document.getElementById("toast-mensaje");
 
-  document.getElementById(
-    "toast-titulo"
-  ).textContent = titulo;
-
-
-  document.getElementById(
-    "toast-mensaje"
-  ).textContent = mensaje;
-
+  if (tituloElemento) tituloElemento.textContent = titulo;
+  if (mensajeElemento) mensajeElemento.textContent = mensaje;
 
   toast.classList.add("mostrar");
 
-
   clearTimeout(window.toastTimer);
-
-
-  window.toastTimer = setTimeout(
-    cerrarToast,
-    3500
-  );
-
+  window.toastTimer = setTimeout(cerrarToast, 3500);
 }
-
 
 function cerrarToast() {
-
   const toast = document.getElementById("toast");
-
-  if (!toast) return;
-
-  toast.classList.remove("mostrar");
-
+  if (toast) toast.classList.remove("mostrar");
 }
-
-
 
 function solicitarCotizacion() {
   if (carrito.length === 0) {
@@ -303,7 +287,10 @@ function solicitarCotizacion() {
     mensaje +=
       "• " + producto.nombre +
       " x" + cantidad +
-      " — $" + subtotal.toLocaleString("es-CL") +
+      " — " +
+      (precioUnitario > 0
+        ? "$" + subtotal.toLocaleString("es-CL")
+        : "Precio a consultar") +
       "\n";
   });
 
@@ -323,14 +310,7 @@ function solicitarCotizacion() {
   );
 }
 
-
-
-document.addEventListener(
-  "DOMContentLoaded",
-  function() {
-
-    actualizarContador();
-    mostrarCarrito();
-
-  }
-);
+document.addEventListener("DOMContentLoaded", function () {
+  actualizarContador();
+  mostrarCarrito();
+}); 
